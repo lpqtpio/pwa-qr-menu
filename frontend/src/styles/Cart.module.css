@@ -1,0 +1,135 @@
+.container {
+  
+   background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.container h2 {
+  color: gray;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.emptyCart {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.emptyCart p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.emptyCart button {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.emptyCart button:hover {
+  transform: translateY(-2px);
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1rem;
+}
+
+.cartItem span:first-child {
+  color: #333;
+  font-weight: 500;
+}
+
+.cartItem span:last-child {
+  color: #667eea;
+  font-weight: bold;
+}
+
+.summary {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.summary h3 {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 0 0;
+  padding-top: 1rem;
+  border-top: 2px solid #ddd;
+  color: #333;
+}
+
+.whatsappButton {
+  width: 100%;
+  padding: 1rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.whatsappButton:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+hr {
+  border: none;
+  border-top: 2px dashed #eee;
+  margin: 1.5rem 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .container h2 {
+    font-size: 1.75rem;
+  }
+  
+  .cartItem {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  
+  .whatsappButton {
+    padding: 0.875rem;
+    font-size: 1.1rem;
+  }
+}
+
+button {
+  padding: 10px;
+  margin-top: 20px;
+  color:red;
+}

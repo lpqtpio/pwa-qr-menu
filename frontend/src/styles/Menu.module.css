@@ -1,0 +1,292 @@
+.container {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Category Tabs */
+.categoryTabs {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.categoryTabs::-webkit-scrollbar {
+  height: 8px;
+}
+
+.categoryTabs::-webkit-scrollbar-thumb {
+  background: #eab166;
+  border-radius: 4px;
+}
+
+.categoryTab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: wheat;
+  border: none;
+  border-radius: 30px;
+  color: #666;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.categoryTab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.activeTab {
+  background: linear-gradient(135deg, #f7b85a 0%, #e27d1f 100%);
+  color: white;
+}
+
+.categoryIcon {
+  font-size: 1.5rem;
+}
+
+.categoryName {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Dishes Grid */
+.dishesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.dishCard {
+  background: wheat;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  border:1px solid rgb(172, 165, 165);
+}
+
+.dishCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.dishImageContainer {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.dishImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.dishCard:hover .dishImage {
+  transform: scale(1.1);
+}
+
+.dishPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+}
+
+.popularBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: orange;
+  color: rgb(128, 60, 11);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 1;
+  border:1px solid rgb(224, 217, 217);
+}
+
+.dishInfo {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dishName {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: chocolate;
+}
+
+.dishDescription {
+  display:flex;
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  margin-top: 0.4rem;
+  flex: 1;
+}
+
+.dishFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.dishPrice {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: chocolate;
+}
+
+.addButton {
+  width:38%;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #ec9954 0%, #eb9a3f 100%);
+  color: white;
+  border: 1px solid rgb(250, 133, 38);
+  border-radius: 18px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.addButton:hover {
+  opacity: 0.9;
+}
+
+.dietaryIcons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.dietaryIcon {
+  font-size: 1rem;
+  cursor: help;
+}
+
+/* Cart Button */
+.cartButton {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #e69549 0%, #d64f1a 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cartButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* Loading State */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error State */
+.errorContainer {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.error {
+  color: #ff4757;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.retryButton {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.retryButton:hover {
+  opacity: 0.9;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .categoryTabs {
+    padding: 0.5rem 0;
+  }
+  
+  .categoryTab {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .dishesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .cartButton {
+    bottom: 80px;
+    right: 10px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}

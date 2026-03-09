@@ -1,0 +1,50 @@
+
+/* Fix mobile viewport height issues */
+:root {
+  --app-height: 100dvh;
+}
+html, body, #root {
+  height: var(--app-height);
+  margin: 0;
+  padding: 0;
+   overflow-x: hidden;
+     width: 100%;
+  min-height: 100dvh;
+}
+
+/* Prevent layout breaking from padding */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Hide scrollbar for all browsers */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Improve font rendering on mobile */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 
+               "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+               "Open Sans", "Helvetica Neue", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none; /* Firefox */
+  overflow-x: hidden;
+}
+
+/* Remove default link styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Improve button touch experience */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
