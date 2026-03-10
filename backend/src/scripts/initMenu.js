@@ -41,3 +41,5 @@ async function initMenu() {
 }
 
 initMenu();
+
+//First time setup, for new database..!

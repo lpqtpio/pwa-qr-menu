@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "qr-menu-backend",
   "type": "module",
   "version": "1.0.0",
   "description": "",
@@ -7,6 +7,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
+    "init:menu": "node src/scripts/initMenu.js",
+    "update:menu": "node src/scripts/updateMenu.js",
     "client": "npm run dev --prefix ../frontend",
     "dev:full": "concurrently \"npm run dev\" \"npm run client\""
   },
