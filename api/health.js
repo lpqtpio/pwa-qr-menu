@@ -1,4 +1,6 @@
+// api/health.js
 import { connectToDatabase } from '../backend/src/config/db.js';
+import { getEnvInfo, isVercel } from '../backend/src/config/env.js';
 
 export default async function handler(req, res) {
   // Enable CORS
@@ -20,6 +22,9 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Get environment info first
+    const envInfo = getEnvInfo();
+    
     // Test database connection
     const startTime = Date.now();
     await connectToDatabase();
@@ -31,13 +36,18 @@ export default async function handler(req, res) {
     const healthStatus = {
       status: 'healthy',
       timestamp: new Date().toISOString(),
-      environment: process.env.VERCEL_ENV || 'development',
-      region: process.env.VERCEL_REGION || 'local',
+      environment: {
+        mode: envInfo.nodeEnv,
+        isVercel: envInfo.isVercel,
+        vercelEnv: envInfo.vercelEnv,
+        region: envInfo.vercelRegion || 'local'
+      },
       database: {
         connected: mongoose.readyState === 1,
         state: ['disconnected', 'connected', 'connecting', 'disconnecting'][mongoose.readyState] || 'unknown',
         latency: `${dbLatency}ms`,
-        name: mongoose.name || 'unknown'
+        name: mongoose.name || 'unknown',
+        host: mongoose.host || 'unknown'
       },
       api: {
         version: '1.0.0',
@@ -45,7 +55,8 @@ export default async function handler(req, res) {
           '/api/health',
           '/api/menu',
           '/api/menu/:id',
-          '/api/categories'
+          '/api/categories',
+          '/api/categories/:id'
         ]
       }
     };
@@ -61,6 +72,7 @@ export default async function handler(req, res) {
     return res.status(503).json({
       status: 'unhealthy',
       timestamp: new Date().toISOString(),
+      environment: getEnvInfo(),
       error: error.message,
       database: {
         connected: false,
