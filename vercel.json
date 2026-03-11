@@ -5,10 +5,11 @@
       "destination": "/"
     }
   ],
-   "outputDirectory": "build",
-   "devCommand": "npm start",
-   "installCommand": "npm install",
-   "headers": [
+  "buildCommand": "cd frontend && npm run build",
+  "outputDirectory": "frontend/dist",
+  "devCommand": "cd frontend && npm run dev",
+  "installCommand": "cd frontend && npm install",
+  "headers": [
     {
       "source": "/service-worker.js",
       "headers": [
