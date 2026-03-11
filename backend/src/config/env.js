@@ -22,7 +22,7 @@ export const NODE_ENV = process.env.NODE_ENV || "development";
 export const VERCEL_ENV = process.env.VERCEL_ENV || null;
 export const VERCEL_REGION = process.env.VERCEL_REGION || null;
 
-// Validate required environment variables (but don't exit in serverless)
+
 const requiredEnvVars = ["MONGODB_URI", "JWT_SECRET"];
 const missingEnvVars = [];
 
@@ -36,7 +36,7 @@ requiredEnvVars.forEach((envVar) => {
 if (missingEnvVars.length > 0) {
   console.error(`❌ Missing required environment variables: ${missingEnvVars.join(', ')}`);
   
-  // In serverless, we throw instead of process.exit
+  
   if (process.env.NODE_ENV === 'production') {
     throw new Error(`Missing required environment variables: ${missingEnvVars.join(', ')}`);
   }
@@ -47,10 +47,10 @@ if (missingEnvVars.length > 0) {
   }
 }
 
-// Helper function to check if running on Vercel
+
 export const isVercel = () => !!process.env.VERCEL;
 
-// Helper function to get environment info
+
 export const getEnvInfo = () => ({
   nodeEnv: NODE_ENV,
   isVercel: isVercel(),

@@ -1,9 +1,9 @@
 // api/health.js
 import { connectToDatabase } from '../backend/src/config/db.js';
-import { getEnvInfo, isVercel } from '../backend/src/config/env.js';
+import { getEnvInfo } from '../backend/src/config/env.js';
 
 export default async function handler(req, res) {
-  // Enable CORS
+  
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -27,11 +27,8 @@ export default async function handler(req, res) {
     
     // Test database connection
     const startTime = Date.now();
-    await connectToDatabase();
-    const dbLatency = Date.now() - startTime;
-
-    // Get MongoDB connection status
     const mongoose = (await connectToDatabase()).connection;
+    const dbLatency = Date.now() - startTime;
     
     const healthStatus = {
       status: 'healthy',
@@ -40,14 +37,14 @@ export default async function handler(req, res) {
         mode: envInfo.nodeEnv,
         isVercel: envInfo.isVercel,
         vercelEnv: envInfo.vercelEnv,
-        region: envInfo.vercelRegion || 'local'
+        region: envInfo.vercelRegion || process.env.VERCEL_REGION || 'local'
       },
       database: {
-        connected: mongoose.readyState === 1,
-        state: ['disconnected', 'connected', 'connecting', 'disconnecting'][mongoose.readyState] || 'unknown',
+        connected: mongoose.connection.readyState === 1,
+        state: ['disconnected', 'connected', 'connecting', 'disconnecting'][mongoose.connection.readyState] || 'unknown',
         latency: `${dbLatency}ms`,
-        name: mongoose.name || 'unknown',
-        host: mongoose.host || 'unknown'
+        name: mongoose.connection.name || 'unknown',
+        host: mongoose.connection.host || 'unknown'
       },
       api: {
         version: '1.0.0',

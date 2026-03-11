@@ -2,6 +2,9 @@
   "name": "pwa-qr-menu",
   "private": true,
   "scripts": {
-    "vercel-build": "cd frontend && npm install && npm run build"
+    "vercel-build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm ci && npm run build",
+    "build:backend": "cd backend && npm ci",
+    "build": "npm run build:frontend"
   }
 }
