@@ -1,11 +1,12 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import app from "./app.js";
-import { PORT, MONGODB_URI } from "./config/env.js";
+import { PORT, MONGODB_URI } from "../../shared/env.js";
 
 dotenv.config();
 
-mongoose.connect(MONGODB_URI)
+mongoose
+  .connect(MONGODB_URI)
   .then(() => {
     console.log("✅ Connected to MongoDB");
     app.listen(PORT, () => {

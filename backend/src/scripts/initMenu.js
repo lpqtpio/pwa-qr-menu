@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import Menu from "./../../src/models/Menu.js";
-import { MONGODB_URI } from "../config/env.js";
+import { MONGODB_URI } from "../../../shared/env.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,9 +24,9 @@ async function initMenu() {
     // Load data from JSON file
     const menuDataPath = path.join(__dirname, "../data/menuData.json");
     console.log("Loading menu from:", menuDataPath);
-    
+
     const menuData = JSON.parse(fs.readFileSync(menuDataPath, "utf8"));
-    
+
     const menu = await Menu.create(menuData);
     console.log("✅ Menu data loaded successfully!");
     console.log(`📊 Categories: ${menu.categories.length}`);

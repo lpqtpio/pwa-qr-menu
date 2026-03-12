@@ -1,6 +1,5 @@
-// backend/src/config/db.js
 import mongoose from 'mongoose';
-import { MONGODB_URI, NODE_ENV, isVercel, getEnvInfo } from './env.js';
+import { MONGODB_URI, NODE_ENV, isVercel, getEnvInfo } from '../../backend/src/config/env.js';
 
 // Log connection info (but hide sensitive data)
 console.log(`🔌 Initializing MongoDB connection...`, {
