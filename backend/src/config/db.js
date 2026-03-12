@@ -17,7 +17,7 @@ if (!cached) {
 
 export async function connectToDatabase() {
   if (cached.conn) {
-    // console.log('📊 Using cached MongoDB connection');
+     console.log('📊 Using cached MongoDB connection');
     return cached.conn;
   }
 
@@ -30,13 +30,15 @@ export async function connectToDatabase() {
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
+       bufferMaxEntries: 0,
       maxPoolSize: isVercel() ? 5 : 10, // Smaller pool for serverless
       minPoolSize: isVercel() ? 0 : 2,   // No min pool for serverless
-      serverSelectionTimeoutMS: 5000,
-      socketTimeoutMS: 45000,
-      connectTimeoutMS: 10000,
+      serverSelectionTimeoutMS: 10000,
+      socketTimeoutMS: 60000,
+      connectTimeoutMS: 20000,
       retryWrites: true,
       retryReads: true,
+      family: 4 
     };
 
     console.log(`🔄 Connecting to MongoDB... (${NODE_ENV} mode)`);
@@ -49,7 +51,11 @@ export async function connectToDatabase() {
         return mongoose;
       })
       .catch((error) => {
-        console.error('❌ MongoDB connection error:', error.message);
+        console.error('❌ MongoDB connection error:', {
+           message: error.message,
+          code: error.code,
+          name: error.name
+        });
         cached.promise = null; // Reset promise on error
         throw error;
       });
