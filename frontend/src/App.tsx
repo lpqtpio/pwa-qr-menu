@@ -10,7 +10,7 @@ import CategoryPage from "./pages/CategoryPage";
 import "./App.css";
 
 function App() {
-    console.log("App rendering with routes");
+   
   return (
     <CartProvider>
       <BrowserRouter>
