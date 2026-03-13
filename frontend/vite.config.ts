@@ -52,7 +52,9 @@ export default defineConfig({
         ]
       },
       devOptions:{
-          enabled: true // Enable PWA in development mode
+           enabled: true, 
+           type: "module",
+           suppressWarnings: true 
       },
 
       workbox: {
