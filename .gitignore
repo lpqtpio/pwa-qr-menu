@@ -19,6 +19,9 @@ dist/
 /backend/dist/
 /frontend/dev-dist/
 
+# Add this line to your .gitignore
+package-lock.json
+
 # Logs
 *.log
 npm-debug.log*
