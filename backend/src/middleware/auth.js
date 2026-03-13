@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { JWT_SECRET } from "../../../shared/env.js";
+import { JWT_SECRET } from "../../shared/config.js";
 
 export const protect = (req, res, next) => {
   const auth = req.headers.authorization;
