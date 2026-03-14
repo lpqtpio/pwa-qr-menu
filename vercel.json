@@ -1,15 +1,6 @@
 {
   "builds": [
     {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "rootDirectory": "frontend",
-        "distDir": "dist",
-        "buildCommand": "npm ci && npm run build"
-      }
-    },
-    {
       "src": "api/**/*.js",
       "use": "@vercel/node"
     }
