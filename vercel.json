@@ -1,16 +1,16 @@
 {
   "builds": [
     {
-      "src": "frontend/package.json",
+      "src": "C:/Users/jorge/Music/Desktop/PWA-QR-MENU/frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "rootDirectory": "frontend",
-        "distDir": "dist",
+        "rootDirectory": "C:/Users/jorge/Music/Desktop/PWA-QR-MENU/frontend",
+        "distDir": "C:/Users/jorge/Music/Desktop/PWA-QR-MENU/frontend/dist",
         "buildCommand": "npm ci && npm run build"
       }
     },
     {
-      "src": "api/**/*.js",
+      "src": "C:/Users/jorge/Music/Desktop/PWA-QR-MENU/api/**/*.js",
       "use": "@vercel/node"
     }
   ],
