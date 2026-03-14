@@ -6,7 +6,7 @@
       "config": {
         "rootDirectory": "frontend",
         "distDir": "dist",
-        "buildCommand": "npm install && npm run build"
+        "buildCommand": "npm ci && npm run build"
       }
     },
     {
