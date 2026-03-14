@@ -1,6 +1,9 @@
-// backend/src/config/db.js
+
 import mongoose from 'mongoose';
-import { MONGODB_URI, NODE_ENV, isVercel, getEnvInfo } from '../../backend/src/config/env.js';
+import { MONGODB_URI } from './config.js';
+
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const isVercel = () => !!process.env.VERCEL;
 
 // Log connection info (but hide sensitive data)
 console.log(`🔌 Initializing MongoDB connection...`, {
@@ -30,7 +33,7 @@ export async function connectToDatabase() {
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
-       bufferMaxEntries: 0,
+      // bufferMaxEntries: 0,
       maxPoolSize: isVercel() ? 5 : 10, // Smaller pool for serverless
       minPoolSize: isVercel() ? 0 : 2,   // No min pool for serverless
       serverSelectionTimeoutMS: 10000,

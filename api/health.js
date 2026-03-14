@@ -1,4 +1,4 @@
-import { connectToDatabase } from "../shared/db.js";
+import { connectToDatabase } from "./lib/db.js";
 
 export default async function handler(req, res) {
   console.log('Health check called');

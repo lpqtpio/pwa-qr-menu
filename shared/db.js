@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
-import { MONGODB_URI, NODE_ENV, isVercel, getEnvInfo } from '../../backend/src/config/env.js';
+import { MONGODB_URI, NODE_ENV, isVercel  } from '../api/lib/config.js';
+
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const isVercel = () => !!process.env.VERCEL;
 
 // Log connection info (but hide sensitive data)
 console.log(`🔌 Initializing MongoDB connection...`, {
