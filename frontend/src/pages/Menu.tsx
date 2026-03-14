@@ -16,6 +16,9 @@ export default function Menu() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+   // 🔥 NEW: Cache for dishes by category
+  const [dishesCache, setDishesCache] = useState<Record<string, Dish[]>>({});
+
    useEffect(() => {
      console.log("Menu useEffect - checking table:", table);
     if (!table) {
