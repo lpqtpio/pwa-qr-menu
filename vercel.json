@@ -6,9 +6,7 @@
       "config": {
         "rootDirectory": "frontend",
         "distDir": "dist",
-        "buildCommand": "npm install && npm run build",
-        "outputDirectory": "dist",
-        "zeroConfig": true
+        "buildCommand": "npm install && npm run build"
       }
     },
     {
@@ -17,12 +15,8 @@
     }
   ],
   "routes": [
-    { "src": "/api/health", "dest": "/api/health.js" },
-    { "src": "/api/categories/?$", "dest": "/api/categories/index.js" },
-    { "src": "/api/categories/([^/]+)", "dest": "/api/categories/[id].js" },
-    { "src": "/api/menu/?$", "dest": "/api/menu/index.js" },
-    { "src": "/api/menu/([^/]+)", "dest": "/api/menu/[id].js" },
+    { "src": "/api/(.*)", "dest": "/api/$1" },
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/frontend/dist/index.html" }
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
