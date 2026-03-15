@@ -1,9 +1,10 @@
 import { Menu, Category, Dish, CategoryDishesResponse } from "../types/menu.types";
 
-
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://your-production-url.com/api' 
+const API_BASE_URL =  import.meta.env.PROD
+  ? (import.meta.env.VITE_API_URL || 'https://your-production-url.com') + 'api' 
   : `http://${window.location.hostname}:5000/api`;
+
+console.log('API Base URL:', API_BASE_URL);
 
 async function fetchAPI<T>(
   endpoint: string,
@@ -21,11 +22,10 @@ async function fetchAPI<T>(
     
     console.log(`📡 Response status:`, response.status);
     
-    // Try to get the response text first for debugging
+   
     const responseText = await response.text();
     console.log(`📦 Response text:`, responseText);
-    
-    // Try to parse as JSON
+   
     let data;
     try {
       data = JSON.parse(responseText);

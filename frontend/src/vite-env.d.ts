@@ -1,23 +1,24 @@
 
 /// <reference types="vite/client" />
 
-interface ImportMetaEnv {
-  readonly VITE_APP_TITLE: string
-  // more env variables...
+ interface ImportMetaEnv {
+    readonly VITE_APP_TITLE: string
+    readonly VITE_APP_TITLE?: string
+    // more env variables...
 }
 
-interface ImportMeta {
-  readonly env: ImportMetaEnv
-}
+ interface ImportMeta {
+ readonly env: ImportMetaEnv
+ }
 
-declare module 'virtual:pwa-register' {
+ declare module 'virtual:pwa-register' {
   export interface RegisterSWOptions {
-    immediate?: boolean
-    onNeedRefresh?: () => void
-    onOfflineReady?: () => void
-    onRegistered?: (registration: ServiceWorkerRegistration | undefined) => void
-    onRegisterError?: (error: unknow) => void
+       immediate?: boolean
+       onNeedRefresh?: () => void
+       onOfflineReady?: () => void
+       onRegistered?: (registration: ServiceWorkerRegistration | undefined) => void
+       onRegisterError?: (error: unknow) => void
   }
 
   export function registerSW(options?: RegisterSWOptions): (reloadPage?: boolean) => Promise<void>
-}
+  }
