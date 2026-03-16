@@ -1,16 +1,31 @@
-import { Menu, Category, Dish, CategoryDishesResponse } from "../types/menu.types";
+import { Menu, Category, Dish, CategoryDishesResponse } from "../types/menu.types.ts";
+
+// Check if we're on a mobile device accessing from network
+const isLocalNetwork = window.location.hostname !== 'localhost' && 
+                       window.location.hostname !== '127.0.0.1';
 
 const API_BASE_URL =  import.meta.env.PROD
-  ? (import.meta.env.VITE_API_URL || 'https://your-production-url.com') + 'api' 
-  : `http://${window.location.hostname}:5000/api`;
+  ? ''  
+  : ( import.meta.env.VITE_API_URL ||
+    (isLocalNetwork
+     ? `http://${window.location.hostname}:5000/api`
+     : `http://localhost:5000`
+    )
+
+    );
 
 console.log('API Base URL:', API_BASE_URL);
+console.log('VITE_API_URL from .env:', import.meta.env.VITE_API_URL);
+console.log('Hostname:', window.location.hostname);
 
 async function fetchAPI<T>(
   endpoint: string,
   options?: RequestInit
   ): Promise<T> {
-  const url = `${API_BASE_URL}${endpoint}`;
+  const finalEndpoint = endpoint.startsWith('/api') ? endpoint : `/api${endpoint}`;
+  const url = `${API_BASE_URL}${finalEndpoint}`;
+
+  console.log('🔍 Fetching URL:', url);
   
   try {
     const response = await fetch(url, {

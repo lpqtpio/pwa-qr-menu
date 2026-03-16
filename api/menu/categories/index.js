@@ -1,6 +1,6 @@
-import { connectToDatabase } from "../lib/db.js";
-import { protect } from "../lib/auth.js";
-import Menu from "../../backend/src/models/Menu.js";
+import { connectToDatabase } from "../../lib/db.js";
+import { protect } from "../../lib/auth.js";
+import Menu from "../../../backend/src/models/Menu.js";
 
 export default async function handler(req, res) {
  
@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, DELETE, OPTIONS",
   );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type,authorization");
 
   // Handle preflight OPTIONS request
   if (req.method === "OPTIONS") {
@@ -23,18 +23,10 @@ export default async function handler(req, res) {
       case "GET":
         return await getCategories(req, res);
       case "POST":
-        return protect(req, res, async () => {
-          return await addCategory(req, res);
-        });
-      case "PUT":
-         return protect(req, res, async () => {
-          return await updateCategories(req, res);
-        });
+        // Add protect middleware if needed
+        return await addCategory(req, res);
       default:
-        return res.status(405).json({
-          error: `Method ${req.method} Not Allowed`,
-          allowedMethods: ["GET", "POST", "PUT", "OPTIONS"],
-        });
+        return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
     }
   } catch (error) {
     console.error("API Error:", error);
@@ -42,23 +34,15 @@ export default async function handler(req, res) {
   }
 }
 
-// GET /api/categories - Get all categories with dish counts
 async function getCategories(req, res) {
   try {
-    const { active, withDishes } = req.query;
-
     const menu = await Menu.findOne().lean();
 
     if (!menu) {
-      return res.status(200).json([]); // Return empty array if no menu
+      return res.status(200).json({ data: [] });
     }
 
     let categories = menu.categories || [];
-
-    // Filter by active status if requested
-    if (active === "true") {
-      categories = categories.filter((c) => c.active === true);
-    }
 
     // Enhance categories with dish information
     const enhancedCategories = categories.map((category) => {
@@ -66,34 +50,17 @@ async function getCategories(req, res) {
         (dish) => dish.category === category.id,
       );
 
-      const availableDishes = categoryDishes.filter((d) => d.available);
-      const popularDishes = categoryDishes.filter((d) => d.popular);
-
       return {
-        ...category,
+        id: category.id,
+        name: category.name,
+        icon: category.icon,
+        active: category.active,
+        order: category.order,
         stats: {
           totalDishes: categoryDishes.length,
-          availableDishes: availableDishes.length,
-          popularDishes: popularDishes.length,
-          priceRange: {
-            min: categoryDishes.length
-              ? Math.min(...categoryDishes.map((d) => d.price))
-              : 0,
-            max: categoryDishes.length
-              ? Math.max(...categoryDishes.map((d) => d.price))
-              : 0,
-          },
+          availableDishes: categoryDishes.filter((d) => d.available).length,
+          popularDishes: categoryDishes.filter((d) => d.popular).length,
         },
-        // Include sample dishes if requested
-        ...(withDishes === "true" && {
-          dishes: categoryDishes.slice(0, 4).map((d) => ({
-            id: d.id,
-            name: d.name,
-            price: d.price,
-            image: d.image,
-            popular: d.popular,
-          })),
-        }),
       };
     });
 
@@ -101,16 +68,14 @@ async function getCategories(req, res) {
     enhancedCategories.sort((a, b) => (a.order || 0) - (b.order || 0));
 
     return res.status(200).json({
-      categories: enhancedCategories,
+      data: enhancedCategories,
       total: enhancedCategories.length,
-      restaurantName: menu.restaurantName,
-      currency: menu.currency,
     });
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
 }
-
+//===================
 // POST /api/categories - Add a new category
 async function addCategory(req, res) {
   try {

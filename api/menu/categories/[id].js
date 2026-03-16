@@ -1,6 +1,6 @@
-import { connectToDatabase } from "../lib/db.js";
-import Menu from "../../backend/src/models/Menu.js";
-import { protect } from "../lib/auth.js";
+import { connectToDatabase } from "../../lib/db.js";
+import Menu from "../../../backend/src/models/Menu.js";
+import { protect } from "../../lib/auth.js";
 
 export default async function handler(req, res) {
   // Enable CORS - MUST be first
