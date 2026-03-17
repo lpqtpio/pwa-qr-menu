@@ -8,7 +8,7 @@
     "build:debug": "vite build && echo 'Current directory:' && pwd && echo 'Listing files:' && ls -la && echo 'Checking dist folder:' && ls -la dist || echo '❌ No dist folder!'",
     "dev": "vite --host",
     "lint": "eslint . --ext js,jsx,ts,tsx --fix",
-    "preview": "vite preview",
+    "preview": "vite preview --host",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {

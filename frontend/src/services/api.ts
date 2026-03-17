@@ -1,25 +1,25 @@
 import { Menu, Category, Dish, CategoryDishesResponse } from "../types/menu.types.ts";
 
 // Check if we're on a mobile device accessing from network
-const isLocalNetwork = window.location.hostname !== 'localhost' && 
-                       window.location.hostname !== '127.0.0.1';
+const isLocalhost = window.location.hostname === 'localhost' || 
+                    window.location.hostname === '127.0.0.1' ||
+                    window.location.hostname === '::1';
 
 const API_BASE_URL =  import.meta.env.PROD
-  ? ''  
-  : ( 
-      import.meta.env.VITE_API_URL ||
-      (isLocalNetwork
-     ? `http://${window.location.hostname}:5000`
-     : `http://localhost:5000`
-    )
+ ? ''  // Vercel production - relative path
+  : (import.meta.env.VITE_API_URL || 
+    (isLocalhost
+      ? 'http://localhost:5000'      //LocalDevelopmentOnPc
+      : `http://${window.location.hostname}:5000`)); //Mobil/Network access
+  
 
-    );
-
-console.log('🔥 PROD:', import.meta.env.PROD);
-console.log('API Base URL:', API_BASE_URL);
-console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
-console.log('Hostname:', window.location.hostname);
-console.log('🔥 isLocalNetwork:', isLocalNetwork);
+ console.log('🔥 Mode:', import.meta.env.MODE);
+ console.log('🔥 PROD:', import.meta.env.PROD);
+ console.log('API Base URL:', API_BASE_URL);
+ console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
+ console.log('Hostname:', window.location.hostname);
+ console.log('🔥 Port:', window.location.port);
+ console.log('🔥 isLocalhost:', isLocalhost);
 
 async function fetchAPI<T>(
   endpoint: string,
@@ -42,14 +42,14 @@ async function fetchAPI<T>(
     
    
     const responseText = await response.text();
-    console.log(`📦 Response text:`, responseText);
+    console.log(`📦 Response text:`, responseText.substring(0, 100) + '...');
    
     let data;
     try {
       data = JSON.parse(responseText);
     } catch {
-      console.error("❌ Failed to parse JSON:", responseText);
-      throw new Error(`Invalid JSON response: ${responseText.substring(0, 100)}`);
+      console.error("❌ Failed to parse JSON, got HTML instead" );
+      throw new Error(`API returned HTML instead of JSON - check if backend is running at ${url}`);
     }
 
     if (!response.ok) {
