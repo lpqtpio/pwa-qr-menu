@@ -5,7 +5,6 @@ import { VitePWA } from "vite-plugin-pwa"
 export default defineConfig({
   plugins: [
     react(),
-
     VitePWA({
       registerType: "autoUpdate",
 
@@ -113,9 +112,29 @@ export default defineConfig({
     })
 
   ],
+  //=====
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false
+      }
+    }
+  },
+  
+  preview: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false
+      }
+     }
+   },
 
-  build: {
-    outDir: "dist",
-    emptyOutDir: true
-  }
+   build: {
+     outDir: "dist",
+     emptyOutDir: true
+   }
 })
