@@ -123,18 +123,20 @@ export default defineConfig({
     }
   },
   
-  preview: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
-        changeOrigin: true,
-        secure: false
-      }
-     }
-   },
-
    build: {
      outDir: "dist",
      emptyOutDir: true
    }
 })
+
+
+
+//lpqntpio code only to see preview running: npm run preview
+
+ // proxy: {
+    //  '/api': {
+    //    target: 'http://localhost:5000',
+   //     changeOrigin: true,
+   //     secure: false
+    //  }
+   //  }
