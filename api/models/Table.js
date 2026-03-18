@@ -20,6 +20,6 @@ const tableSchema = new mongoose.Schema({
   timestamps: true 
 });
 
-const Table = mongoose.model("Table", tableSchema);
+const Table = mongoose.model.Table || mongoose.model("Table", tableSchema);
 
 export default Table;

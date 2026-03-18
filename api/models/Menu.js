@@ -34,5 +34,7 @@ const menuSchema = new mongoose.Schema({
   currency: { type: String, default: "$" }
 }, { timestamps: true });
 
-const Menu = mongoose.model("Menu", menuSchema);
+// ✅ FIX HERE
+const Menu = mongoose.models.Menu || mongoose.model("Menu", menuSchema);
+
 export default Menu;

@@ -1,6 +1,6 @@
 import { connectToDatabase } from "../../lib/db.js";
 import { protect } from "../../lib/auth.js";
-import Menu from "../../../backend/src/models/Menu.js";
+import Menu from "../../models/Menu.js";
 
 export default async function handler(req, res) {
  
