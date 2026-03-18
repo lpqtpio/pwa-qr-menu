@@ -10,11 +10,6 @@ export default function Menu() {
   const { addToCart, table, cart } = useCart();
   const navigate = useNavigate();
  
-  // 🔥 DEBUG: Log everything
-//  console.log("🔥 Menu component rendering");
- // console.log("🔥 table from useCart:", table);
-  
-  
 
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -70,7 +65,7 @@ export default function Menu() {
     try {
       setLoading(true);
       console.log("🔍 Fetching categories from API...");
-     // console.log("API URL:", "http://192.168.18.29:5000/api/menu/categories"); 
+    
 
       const data = await getCategories();
       console.log("✅ Categories received:", data);
