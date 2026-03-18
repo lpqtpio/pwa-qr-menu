@@ -1,13 +1,23 @@
 .categoriesContainer {
-  padding: 2rem 0;
+  width: 100%;
+  height:60px;
+  padding: 1rem 0;
+  /*background-color: red;*/
+  margin-top: 50rem;
+  color: white;
 }
 
-.title {
+ h2.title  {
+  width: 100%;
+  height:50px;
+  display: flex;
   font-size: 2rem;
-  color: white;
-  margin-bottom: 2rem;
+  /*color: black;*/
+  margin-top:0.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+ 
 }
 
 .categoriesGrid {
@@ -15,6 +25,7 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   padding: 1rem;
+  background-color: green;
 }
 
 .categoryCard {

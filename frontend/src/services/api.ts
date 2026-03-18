@@ -5,13 +5,9 @@ const isLocalhost = window.location.hostname === 'localhost' ||
                     window.location.hostname === '127.0.0.1' ||
                     window.location.hostname === '::1';
 
-const API_BASE_URL =  import.meta.env.PROD
- ? ''  // Vercel production - relative path
-  : (import.meta.env.VITE_API_URL || 
-    (isLocalhost
-      ? 'http://localhost:5000'      //LocalDevelopmentOnPc
-      : `http://${window.location.hostname}:5000`)); //Mobil/Network access
-  
+
+//const API_BASE_URL = "http://192.168.18.29:5000";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "";
 
  console.log('🔥 Mode:', import.meta.env.MODE);
  console.log('🔥 PROD:', import.meta.env.PROD);
@@ -26,8 +22,11 @@ async function fetchAPI<T>(
   options?: RequestInit
   ): Promise<T> {
   const finalEndpoint = endpoint.startsWith('/api') ? endpoint : `/api${endpoint}`;
-  const url = `${API_BASE_URL}${finalEndpoint}`;
-
+  //const url = `${API_BASE_URL}${finalEndpoint}`;
+  const url = API_BASE_URL
+  ? `${API_BASE_URL}${finalEndpoint}`
+  : finalEndpoint;
+  
   console.log('🔍 Fetching URL:', url);
   
   try {

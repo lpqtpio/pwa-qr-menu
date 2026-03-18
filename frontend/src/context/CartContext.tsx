@@ -28,7 +28,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [table, setTable] = useState<string | null>(() => {
     const stored = localStorage.getItem(TABLE_KEY);
     console.log("Initial table from localStorage:", stored);
-    return stored;
+    return stored && stored.trim() !== "" ? stored : null;
   });
 
   const [cart, setCart] = useState<CartItem[]>(() => {
@@ -52,13 +52,13 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       setCart([]); // Clear cart for new table
     }
     
-    setTable(newTable);
+    setTable(newTable && newTable.trim() !== "" ? newTable : null);
   };
 
   // 🔥 Modified: Clear cart when table changes (backup effect)
   useEffect(() => {
     console.log("Table state changed to:", table);
-    if (table) {
+    if (table && table.trim() !== "") {
       localStorage.setItem(TABLE_KEY, table);
     } else {
       localStorage.removeItem(TABLE_KEY);

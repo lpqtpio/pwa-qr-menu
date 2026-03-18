@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Category } from "../../types/menu.types";
-import { getCategories } from "../../services/api";
-import styles from "./Categories.module.css";
+import { Category } from "../../types/menu.types.ts";
+import { getCategories } from "../../services/api.ts";
+import styles from "../../../src/styles/Categories.module.css";
 
 interface CategoriesProps {
   onSelectCategory?: (categoryId: string) => void;

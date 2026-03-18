@@ -2,21 +2,27 @@
   padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: black;
+  border-radius:8px;
 }
 
 /* Category Tabs */
 .categoryTabs {
   display: flex;
+  height:4.3rem;
+  align-items: center;
   overflow-x: auto;
   gap: 0.5rem;
   padding: 1rem 0;
   margin-bottom: 2rem;
+  margin-top:0;
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
+  /*ckground-color: #fff;*/
 }
 
 .categoryTabs::-webkit-scrollbar {
-  height: 8px;
+  height:6px;
 }
 
 .categoryTabs::-webkit-scrollbar-thumb {
@@ -26,13 +32,15 @@
 
 .categoryTab {
   display: flex;
+  height:60px;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
+  margin-top:0.8rem;
+  margin-bottom:1.3rem;
   background: wheat;
-  border: none;
+  border:1px solid rgb(216, 205, 205);
   border-radius: 30px;
-  color: #666;
+  color: gray;
   font-size: 1rem;
   cursor: pointer;
   white-space: nowrap;
@@ -56,7 +64,7 @@
 
 .categoryName {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* Dishes Grid */
@@ -192,12 +200,12 @@
 /* Cart Button */
 .cartButton {
   position: fixed;
-  bottom: 90px;
+  bottom: 80px;
   right: 20px;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #e69549 0%, #d64f1a 100%);
+  background: linear-gradient(135deg, #5349e6 0%, #d64f1a 100%);
   color: white;
-  border: none;
+  border:1px solid rgb(112, 107, 107);
   border-radius: 50px;
   font-size: 1.1rem;
   font-weight: bold;

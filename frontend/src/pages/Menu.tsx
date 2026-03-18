@@ -1,53 +1,84 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../hooks/useCart.ts";
 import { Category, Dish } from "../types/menu.types.ts";
-import { getCategories, getDishesByCategory } from "../services/api.ts";
+import { getCategories, getDishesByCategory  } from "../services/api.ts";
 import styles from "./../../src/styles/Menu.module.css";
 
 
 export default function Menu() {
   const { addToCart, table, cart } = useCart();
   const navigate = useNavigate();
+ 
+  // 🔥 DEBUG: Log everything
+//  console.log("🔥 Menu component rendering");
+ // console.log("🔥 table from useCart:", table);
+  
+  
 
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [dishes, setDishes] = useState<Dish[]>([]);
+  const [dishes, setDishes ] = useState<Dish[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-   // 🔥 NEW: Cache for dishes by category
   const [dishesCache, setDishesCache] = useState<Record<string, Dish[]>>({});
 
-   useEffect(() => {
-     console.log("Menu useEffect - checking table:", table);
+  //==========================>
+ const fetchDishes = useCallback(async (categoryId: string) => {
+  if (dishesCache[categoryId]) {
+    console.log(`📦 Using cached dishes for category ${categoryId}`);
+    setDishes(dishesCache[categoryId]);
+    return;
+  }
+
+  try {
+    console.log(`🌐 Fetching dishes for category ${categoryId} from API...`);
+    const data = await getDishesByCategory(categoryId);
+
+    setDishes(data.dishes);
+
+    setDishesCache(prev => ({
+      ...prev,
+      [categoryId]: data.dishes
+    }));
+  } catch (err) {
+    console.error("Failed to load dishes:", err);
+  }
+}, [dishesCache]); // ✅ keep dependency
+//======================>
+  // Check table and fetch categories
+  useEffect(() => {
+   
+
     if (!table) {
-     navigate("/");
-     return;
+      navigate("/");
+      return;
     }
-     fetchCategories();
+     console.log("🔥 Table found, fetching categories");
+    fetchCategories();
   }, [table, navigate]); 
 
-   useEffect(() => {
+  // Fetch dishes when category changes
+  useEffect(() => {
     if (selectedCategory) {
       fetchDishes(selectedCategory);
     }
-  }, [selectedCategory]);
+  }, [selectedCategory, fetchDishes]);
 
-    const fetchCategories = async () => {
+  const fetchCategories = async () => {
     try {
       setLoading(true);
+      console.log("🔍 Fetching categories from API...");
+      console.log("API URL:", "http://192.168.18.29:5000/api/menu/categories"); 
 
-       console.log("🔍 Fetching categories from API...");
-       console.log("API URL:", "http://192.168.18.29:5000/api/menu/categories"); 
+      const data = await getCategories();
+      console.log("✅ Categories received:", data);
 
-       const data = await getCategories();
-       console.log("✅ Categories received:", data);
-
-       setCategories(data);
-       if (data.length > 0) {
+      setCategories(data);
+      if (data.length > 0) {
         setSelectedCategory(data[0].id); 
-       }
+      }
       setError(null);
     } catch (err: unknown) {
       console.error("❌ Failed to load menu:", err);
@@ -56,19 +87,9 @@ export default function Menu() {
         console.error("Error message:", err.message);
         console.error("Error stack:", err.stack);
       }
-      
       setError("Failed to load menu");
-      console.error(err);
     } finally {
       setLoading(false);
-    }
-  };
-  const fetchDishes = async (categoryId: string) => {
-    try {
-      const data = await getDishesByCategory(categoryId);
-      setDishes(data.dishes);
-    } catch (err) {
-      console.error("Failed to load dishes:", err);
     }
   };
 
@@ -99,7 +120,7 @@ export default function Menu() {
   }
 
   return (
-     <div className={styles.container}>
+    <div className={styles.container}>
       {/* Category Tabs */}
       <div className={styles.categoryTabs}>
         {categories.map((category) => (
