@@ -5,8 +5,6 @@ const isLocalhost = window.location.hostname === 'localhost' ||
                     window.location.hostname === '127.0.0.1' ||
                     window.location.hostname === '::1';
 
-
-//const API_BASE_URL = "http://192.168.18.29:5000";
 const API_BASE_URL = import.meta.env.VITE_API_URL || "";
 
  console.log('🔥 Mode:', import.meta.env.MODE);
