@@ -70,7 +70,7 @@ export default function Menu() {
     try {
       setLoading(true);
       console.log("🔍 Fetching categories from API...");
-      console.log("API URL:", "http://192.168.18.29:5000/api/menu/categories"); 
+     // console.log("API URL:", "http://192.168.18.29:5000/api/menu/categories"); 
 
       const data = await getCategories();
       console.log("✅ Categories received:", data);
@@ -82,6 +82,7 @@ export default function Menu() {
       setError(null);
     } catch (err: unknown) {
       console.error("❌ Failed to load menu:", err);
+      
       if (err instanceof Error) {
         console.error("Error name:", err.name);
         console.error("Error message:", err.message);

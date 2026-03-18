@@ -22,11 +22,11 @@ async function fetchAPI<T>(
   options?: RequestInit
   ): Promise<T> {
   const finalEndpoint = endpoint.startsWith('/api') ? endpoint : `/api${endpoint}`;
-  //const url = `${API_BASE_URL}${finalEndpoint}`;
+  
   const url = API_BASE_URL
   ? `${API_BASE_URL}${finalEndpoint}`
   : finalEndpoint;
-  
+
   console.log('🔍 Fetching URL:', url);
   
   try {
