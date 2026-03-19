@@ -3,11 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "vercel-build": "npm run build:api  &&  npm run build:frontend && npm run copy:frontend",
+    "vercel-build": "npm run build:api  &&  npm run build:frontend",
     "build:api": "cd api && npm ci",
     "build:frontend": "cd frontend && npm ci && npm run build",
-    "copy:frontend": "mkdir -p public && cp -r frontend/dist/* public/",
-    "build:backend": "cd backend && npm ci",
     "build": "npm run build:frontend"
   },
   "dependencies": {}
