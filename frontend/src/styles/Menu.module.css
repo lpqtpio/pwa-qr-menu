@@ -1,24 +1,18 @@
 .container {
-  padding: 1rem;
-  max-width: 1200px;
+ padding: 0.75rem;
+  width: 100%;
+  max-width: 600px; /* was 1200px */
   margin: 0 auto;
   background-color: black;
-  border-radius:8px;
+  border-radius: 0; /* remove "card" feel on mobile */
 }
 
 /* Category Tabs */
 .categoryTabs {
-  display: flex;
-  height:4.3rem;
-  align-items: center;
-  overflow-x: auto;
-  gap: 0.5rem;
-  padding: 1rem 0;
-  margin-bottom: 2rem;
-  margin-top:0;
-  scrollbar-width: thin;
-  -webkit-overflow-scrolling: touch;
-  /*ckground-color: #fff;*/
+   height: auto;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  gap: 0.4rem;
 }
 
 .categoryTabs::-webkit-scrollbar {
@@ -32,16 +26,18 @@
 
 .categoryTab {
   display: flex;
-  height:60px;
+  height:44px;
   align-items: center;
   gap: 0.5rem;
-  margin-top:0.8rem;
-  margin-bottom:1.3rem;
+ /* margin-top:0.8rem;*/
+/*  margin-bottom:1.3rem;*/
+margin:0;
   background: wheat;
   border:1px solid rgb(216, 205, 205);
   border-radius: 30px;
   color: gray;
-  font-size: 1rem;
+  font-size: 0.9rem;
+    padding: 0 0.9rem;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.3s;
@@ -70,7 +66,7 @@
 /* Dishes Grid */
 .dishesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.5rem;
   margin-bottom: 5rem;
 }
@@ -93,7 +89,7 @@
 
 .dishImageContainer {
   position: relative;
-  height: 200px;
+  height: clamp(140px, 25vh, 200px);
   overflow: hidden;
 }
 
@@ -141,8 +137,9 @@
 }
 
 .dishName {
+    font-size: 1rem;
   margin: 0 0 0.5rem 0;
-  font-size: 1.2rem;
+ /* font-size: 1.2rem;*/
   color: chocolate;
 }
 
@@ -150,7 +147,7 @@
   display:flex;
   text-align: center;
   color: #666;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   margin-bottom: 1rem;
   margin-top: 0.4rem;
@@ -171,7 +168,8 @@
 }
 
 .addButton {
-  width:38%;
+  /*width:38%;*/
+  width:100%;
   padding: 0.5rem 1rem;
   background: linear-gradient(135deg, #ec9954 0%, #eb9a3f 100%);
   color: white;
@@ -275,26 +273,40 @@
   opacity: 0.9;
 }
 
-/* Mobile Styles */
+
+/* Mobile Styles @media max-width:768px */
+/* Mobile Styles @media max-width:768px */
 @media (max-width: 768px) {
+   .container {
+    padding: 0.5rem;
+  }
+
   .categoryTabs {
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
   }
-  
+
   .categoryTab {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    height: 40px;
+    font-size: 0.85rem;
   }
-  
+
   .dishesGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
   }
-  
+
+  .dishInfo {
+    padding: 0.8rem;
+  }
+
+  .dishImageContainer {
+    height: clamp(120px, 22vh, 180px);
+  }
+
   .cartButton {
-    bottom: 80px;
+    bottom: 65px;
     right: 10px;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
   }
 }
