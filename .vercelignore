@@ -1,0 +1,2 @@
+# Ignore the backend folder since we're using api/ for serverless
+backend/
