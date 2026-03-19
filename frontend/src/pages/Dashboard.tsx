@@ -27,7 +27,13 @@ export default function Dashboard() {
           alt="img Italian Restaurant"
                  
         />
-      <h1>Restaurant Rissoto Bién Venido..!</h1>
+      <h1>Restaurant Rissoto 
+        <br />
+        <span className={styles.bienvenido}>
+        ¡Bienvenid@...!
+        </span>
+       
+        </h1>
       <div className={styles.inputWrapper}>
         <h3>Escriba el número de Mesa:</h3>
           <input
