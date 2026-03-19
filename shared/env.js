@@ -6,7 +6,6 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
 // Detect if running on Vercel
 const runningOnVercel = !!process.env.VERCEL;
 

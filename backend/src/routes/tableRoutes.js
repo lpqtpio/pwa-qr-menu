@@ -1,5 +1,5 @@
 import { Router } from "express";
-import Table from "../models/Table.js";
+import Table from "../../../api/models/Table.js";
 import { protect } from "../middleware/auth.js";
 
 const router = Router();

@@ -1,4 +1,4 @@
-import Menu from "../models/Menu.js";
+import Menu from "../../../api/models/Menu.js";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";

@@ -8,5 +8,7 @@
     "build:frontend": "cd frontend && npm ci && npm run build",
     "build": "npm run build:frontend"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  }
 }
