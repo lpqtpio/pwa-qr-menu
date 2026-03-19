@@ -1,0 +1,9 @@
+{
+  "name": "api",
+  "type": "module",
+  "dependencies": {
+    "mongoose": "^9.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "dotenv": "^17.3.1"
+  }
+}
