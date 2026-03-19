@@ -5,8 +5,7 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-//=========
-    res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Type', 'application/json');
 
      // Log the request for debugging
   console.log('🔵 Dishes API called:', {
@@ -15,7 +14,7 @@ export default async function handler(req, res) {
     query: req.query,
     time: new Date().toISOString()
   });
-//===========
+
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
@@ -45,8 +44,11 @@ export default async function handler(req, res) {
       const dishes = menu.dishes.filter(d => d.category === id);
 
       return res.status(200).json({
-        category,
-        dishes
+        data: {
+          category,
+          dishes
+        }
+       
       });
     }
 
