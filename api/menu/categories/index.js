@@ -75,7 +75,7 @@ async function getCategories(req, res) {
     return res.status(500).json({ error: error.message });
   }
 }
-//===================
+
 // POST /api/categories - Add a new category
 async function addCategory(req, res) {
   try {
