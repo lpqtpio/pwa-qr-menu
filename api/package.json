@@ -1,6 +1,7 @@
 {
-  "name": "api",
+  "name": "pwa-qr-menu",
   "type": "module",
+ 
   "dependencies": {
     "mongoose": "^9.3.0",
     "jsonwebtoken": "^9.0.3",

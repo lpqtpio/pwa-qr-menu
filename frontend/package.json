@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "tsc && vite build",
     "build:debug": "vite build && echo 'Current directory:' && pwd && echo 'Listing files:' && ls -la && echo 'Checking dist folder:' && ls -la dist || echo '❌ No dist folder!'",
     "dev": "vite --host",
     "lint": "eslint . --ext js,jsx,ts,tsx --fix",
