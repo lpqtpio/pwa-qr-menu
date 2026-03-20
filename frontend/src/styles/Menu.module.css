@@ -231,11 +231,11 @@
 
 .addButton {
   /*width:38%;*/
-  width:50%;
+  width:70%;
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.3rem;
   background: linear-gradient(135deg, #ec9954 0%, #eb9a3f 100%);
   color: white;
   border: 1px solid rgb(250, 133, 38);
@@ -243,10 +243,10 @@
   font-size: 16px;
   cursor: pointer;
   transition: opacity 0.3s;
-  min-width: 60px;
+ 
   height:40px;
-  margin-left:25%;
-  margin-right:25%;
+  margin-left:15%;
+  margin-right:15%;
   margin-top:10px;
   margin-bottom:10px;
 }
@@ -273,23 +273,24 @@
 /* Cart Button */
 .cartButton {
   position: fixed;
-  bottom: 80px;
-  right: 16px;
-  left: 16px;
-    width: calc(100% - 32px);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 90px;
+    width: 60%;
+    height: 50px;
   padding: 1rem ;
   background: linear-gradient(135deg, #5349e6 0%, #d64f1a 100%);
   color: white;
   border:1px solid rgb(112, 107, 107);
   border-radius: 50px;
-  font-size: 1.1rem;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
   transition: all 0.3s;
   z-index: 100;
-  display: flex;
-  align-items: center;
+  
   gap: 0.5rem;
 }
 
@@ -397,14 +398,19 @@
 /* iPhone SE / small phones (320px - 375px) */
 @media (max-width: 375px) {
   .container {
+    display: flex;
+    justify-content: center;
+    min-width:360px;
+    max-width: fit-content;
+    min-height: 80vh;
     padding: 0.4rem;
   }
 
   .categoryTab {
-    min-width: 65px;
-    height: 65px;
-    font-size: 14px;
-    padding: 0.4rem;
+    min-width: 100px;
+    height: 70px;
+    font-size: 16px;
+    padding: 0.7rem;
   }
 
   .categoryIcon {
