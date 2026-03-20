@@ -10,7 +10,7 @@
   border-radius: 15px; 
     overflow-x: hidden;
     padding:0;
-    margin:0;
+    margin-top:40px;
     box-sizing: border-box;
 }
 
@@ -20,7 +20,7 @@
   display: flex;
   justify-content: center;
   width: 100%; 
-  height:70px;
+  height:80px;
   max-width: 100%;
   overflow-x: auto;
    gap: 0.5rem;
@@ -56,7 +56,7 @@
   align-items: center;
   justify-content: center;
   min-width: 150px; /* Slightly smaller for 360px */
-  width: 150px; /* Fixed width */
+  width: 170px; /* Fixed width */
   height: 75px;
   padding: 0.4rem 0.8rem 0.4rem 0.8rem;
   background: wheat;
@@ -64,7 +64,7 @@
   border-radius: 16px;
   color: #666;
  
-  font-weight: 500;
+ 
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.2s ease;
@@ -102,7 +102,7 @@
    white-space: nowrap;
 }
 
-/* Dishes Grid */
+/* Dishes Grid Contain the selected items */
 .dishesGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -111,7 +111,7 @@
    margin-bottom: 1rem;
   width:100%;
   height: auto;
-  max-width: 768px;
+  max-width: 1200px;
   box-sizing: border-box;
   background-color: red;
   margin-top:20px;
@@ -285,6 +285,8 @@
   align-items: center;
   bottom: 90px;
     width: 60%;
+    margin-left:20%;
+    margin-right:20%;
     height: 50px;
   padding: 1rem ;
   background: linear-gradient(135deg, #5349e6 0%, #d64f1a 100%);
@@ -380,7 +382,7 @@
   }
 
   .dishesGrid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 0.75rem;
   }
 
@@ -433,10 +435,9 @@
   }
 
   .dishesGrid {
-    width: 360px;
-    min-height: auto;
-    gap: 0.5rem;
-    background-color: rgb(32, 30, 30);
+     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    background-color: purple;
   }
 
   .dishImageContainer {
@@ -484,6 +485,6 @@
     left: 20%;
     right: 20%;
     width: 60%;
-    height: 40px;
+    height: 50px;
   }
 }
