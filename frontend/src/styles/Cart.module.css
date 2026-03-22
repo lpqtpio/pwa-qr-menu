@@ -2,10 +2,9 @@
   display: block;
   width: 100%;
   max-width: 600px;
-  height:auto;
-   margin-top: 16px auto;
-    margin: 16px auto;
-   background: rgb(224, 220, 220);
+  min-height:90vh;
+    margin: 40px auto;
+   background: whitesmoke;
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
