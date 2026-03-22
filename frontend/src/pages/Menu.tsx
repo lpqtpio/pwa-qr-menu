@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useCart } from "../hooks/useCart.ts";
 import { Category, Dish } from "../types/menu.types.ts";
 import { getCategories, getDishesByCategory  } from "../services/api.ts";
@@ -16,6 +16,8 @@ export default function Menu() {
   const [dishes, setDishes ] = useState<Dish[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const location = useLocation();
+  const isActive = (path: string) => location.pathname === path;
 
   const [dishesCache, setDishesCache] = useState<Record<string, Dish[]>>({});
 
@@ -190,12 +192,26 @@ export default function Menu() {
       </div>
 
       {/* Cart Button */}
-      <button 
-        className={styles.cartButton}
-        onClick={() => navigate("/cart")}
-      >
-        🛒 Ver Carrito ({cartItemCount})
-      </button>
+      <div>
+           <Link 
+                to="/" 
+                className={`${styles.navIconLink} ${
+                isActive("/") ? styles.activeNavIcon : ""
+                }`}
+                title="Inicio"
+                >
+                <span className={styles.iconHome}>🏠</span>
+                <span className={styles.navIconLabelHome}>Inicio</span>
+          </Link>
+
+        <button 
+                className={styles.cartButton}
+                onClick={() => navigate("/cart")}
+        >
+               🛒 Ver Carrito ({cartItemCount})
+        </button>
+
+      </div>
     </div>
   );
 }

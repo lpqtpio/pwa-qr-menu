@@ -62,13 +62,20 @@ export default function Cart() {
             <p>Tax (15%): <span>${tax.toFixed(2)}</span></p>
             <h3>Total: <span>${total.toFixed(2)}</span></h3>
           </div>
-
-          <button 
-            onClick={sendWhatsApp}
-            className={styles.whatsappButton}
-          >
-            Confirmar por WhatsApp
-          </button>
+          <div className={styles.downButtons}>
+              <button  onClick={goToMenu}
+                       className={styles.backToMenu}
+                       >
+                        Ver Menú
+              </button>
+               <button 
+                       onClick={sendWhatsApp}
+                       className={styles.whatsappButton}
+                >
+                        Confirmar por WhatsApp
+                </button>
+          </div>
+         
         </>
       )}
     </div>

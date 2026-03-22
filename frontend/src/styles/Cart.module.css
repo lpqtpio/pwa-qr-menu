@@ -79,12 +79,33 @@
   border-top: 2px solid #ddd;
   color: #333;
 }
-
+.downButtons{
+  display:flex;
+  flex-direction: row;
+  padding:8px;
+  width:100%;
+  height: auto;
+  background-color: whitesmoke;
+  border-radius: 15px;;
+}
 .whatsappButton {
-  width: 100%;
+  width: 50%;
   padding: 1rem;
   background: #25D366;
   color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+.backToMenu {
+   width: 50%;
+  padding: 1rem;
+  background: wheat;
+  color: brown;
   border: none;
   border-radius: 8px;
   font-size: 1.2rem;

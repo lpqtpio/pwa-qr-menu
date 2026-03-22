@@ -1,5 +1,4 @@
 import { CartProvider } from "./context/CartContext.tsx";
-import Layout from "./components/Layout/Layout";
 import Dashboard from "./pages/Dashboard.tsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from "./pages/Menu.tsx";
@@ -14,7 +13,7 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter>
-      <Layout>
+     
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/menu" element={<Menu />} />
@@ -25,7 +24,7 @@ function App() {
           <Route path="/categories" element={<Menu />} />
            <Route path="*" element={<div>404 - No route match for: {window.location.pathname}</div>} />
         </Routes>
-      </Layout>
+     
     </BrowserRouter>
     </CartProvider>
   );

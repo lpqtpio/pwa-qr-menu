@@ -6,7 +6,7 @@
   max-width: 1200px; /* was 1200px */
   min-height:90vh;
  
-  background-color: rgb(15, 79, 144);
+  /*background-color: rgb(15, 79, 144);*/
   border-radius: 15px; 
     overflow-x: hidden;
     padding:0;
@@ -34,7 +34,7 @@
   box-sizing: border-box;
  
   z-index: 1000;
-  background: black;
+  background: rgb(40, 39, 39);
   scroll-snap-type: x mandatory;
   
 }
@@ -115,7 +115,7 @@
   height: auto;
   max-width: 1200px;
   box-sizing: border-box;
-  background-color: red;
+  /*background-color: red;*/
   margin-top:10px;
 }
 
