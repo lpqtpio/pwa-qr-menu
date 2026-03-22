@@ -1,18 +1,17 @@
 .container {
   display: block;
-  width: 80%;
-  height:auto;
-   margin-top: 40px;
-   margin-left:10%;
-   margin-right:10%;
-   background: rgb(183, 180, 180);
-  border-radius: 15px;
-  padding: 2rem;
+  width: 100%;
   max-width: 600px;
+  height:auto;
+   margin-top: 16px auto;
+    margin: 16px auto;
+   background: rgb(224, 220, 220);
+  border-radius: 12px;
+  padding: 1rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-.container h2 {
-  color: gray;
+.container h2 {/*Su Carta*/
+  color: rgb(57, 60, 61);
   margin-bottom: 1.5rem;
   text-align: center;
   font-size: 2rem;
@@ -70,6 +69,7 @@
 
 .summary p {
   display: flex;
+  font-size:1rem;
   justify-content: space-between;
   margin: 0.5rem 0;
   color: #666;
@@ -85,16 +85,18 @@
 }
 .downButtons{/*Container flex of twoButtons*/
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   padding:8px 8px;
   width:100%;
   height: auto;
-  gap:8px;
+  gap:10px;
+  margin-top:1rem;
   background-color: rgb(134, 129, 129);
   border-radius: 15px;;
 }
+
 .whatsappButton {/*TowardWhatsAppButton*/
-  width: 50%;
+  width: 100%;
   padding: 1rem;
   background: #25D366;
   color: white;
@@ -104,10 +106,12 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .backToMenu {/*Volver al Menu*/
-   width: 50%;
+
+  width: 100%;
   padding: 1rem;
   background: wheat;
   color: brown;
@@ -117,7 +121,9 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
 }
 
 .whatsappButton:hover {
