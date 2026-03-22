@@ -39,35 +39,37 @@
   font-family:'Brush Script MT', cursive;
 }
 /* New class for the input wrapper */
-.inputWrapper {
-  width:100%;
+.inputWrapper {/*ThisIs A containerAll TheFields/Block*/
+  display: flex;
+  flex-direction: column;
+  width:90%;
+  height:auto;
    position: relative;
   z-index: 2;
   background: rgb(247, 202, 144);
   border-radius: 20px 20px 0 0;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
+  margin:0 auto;
  
   /* subtle elevation */
   box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
   margin-top:5px;
 }
 .inputWrapper h3 {/*Escriba el numero de mesa*/
-   font-size: 1rem;
+   font-size:18px;
   color: #444;
   text-align: center;
 }
 
 /* Class for input field */
-.input {
+.input {/*Numero de mesa Here*/
    width: 100%;
-  height: 52px;
-  padding: 0 1rem;
-  font-size: 1.1rem;
+  height: auto;
+  padding: 0.3  1rem;
+  font-size: 16px;
   border-radius: 12px;
   border: 1px solid rgb(224, 207, 207);
-  background: #f7f7f7;
+  background: #8f8d8d;
   color: rgb(49, 44, 44);
   font-weight:600;
   text-align: center;
@@ -76,14 +78,15 @@
 .input:focus {
   outline: none;
   border-color: rgb(247, 182, 99);
-  background: white;
+  background: rgb(127, 119, 119);
 }
 
 /* Class for button */
 .button {
   width: 100%;
-  height: 52px;
+  height: auto;
   border-radius: 14px;
+   padding: 10px  1rem;
   border: none;
   font-size: 1.1rem;
   font-weight: 600;
@@ -117,8 +120,9 @@
 /*@media max-width: 768px*/
 @media (max-width: 768px) {
   .inputWrapper {
+    width:100%;
+    height: 3rem;
     margin-top: 2rem;
-    height: auto;
   }
 
   .container {
@@ -149,6 +153,7 @@
  }
   .inputWrapper {
     width:100%;
+    height: 15vh;
     padding:1rem;   
     gap: 1rem;           
     border-radius: 24px 24px 0 0; 
@@ -163,13 +168,23 @@
   }
 
   .input {
-    height: 56px;           /* slightly bigger tap target */
-    font-size: 1.15rem;
+    display:flex;
+    justify-content:start;
+    padding-left: 5px;
+    padding-top:10px;
+    padding-bottom:10px;
+    height:auto;           
+    font-size: 16px;
   }
 
   .button {
-    height: 56px;
-    font-size: 1.1rem;
+    display:flex;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size:17px;
+    height: auto;
+    font-size: 17px;
   }
  
 }

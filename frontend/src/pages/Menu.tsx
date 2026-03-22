@@ -192,7 +192,7 @@ export default function Menu() {
       </div>
 
       {/* Cart Button */}
-      <div>
+      <div className={styles.linkButton}>
            <Link 
                 to="/" 
                 className={`${styles.navIconLink} ${

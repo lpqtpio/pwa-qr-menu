@@ -66,7 +66,7 @@ export default function Cart() {
               <button  onClick={goToMenu}
                        className={styles.backToMenu}
                        >
-                        Ver Menú
+                        Volver al Menú
               </button>
                <button 
                        onClick={sendWhatsApp}
