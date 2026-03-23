@@ -48,7 +48,7 @@ export default function Dashboard() {
             onClick={handleViewMenu}
             className={styles.button}
           >
-            Menú
+           VER EL MENÚ
           </button>
       </div>
     </div>

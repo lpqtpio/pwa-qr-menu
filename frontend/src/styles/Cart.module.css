@@ -101,8 +101,8 @@
   border-radius: 8px;;
 }
 
-.whatsappButton {/*TowardWhatsAppButton*/
-  width: 100%;
+.whatsappButton {/*dWhatsAppButton*/
+  
   padding: 1rem;
   background: #25D366;
   color: white;
@@ -114,10 +114,12 @@
   transition: all 0.3s;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  margin-left:2rem;
+  margin-right:2rem;
 }
 
 .backToMenu {/*Volver al Menu*/
-  width: 100%;
+
   padding: 1rem;
   background: wheat;
   color: brown;
@@ -129,6 +131,8 @@
   transition: all 0.3s;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+   margin-left:2rem;
+  margin-right:2rem;
 
 }
 
