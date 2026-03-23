@@ -37,15 +37,15 @@ export default function Cart() {
 
   return (
       <div className={styles.container}>
-      <h2>Su Carta</h2>
+          <h2>Su Carta</h2>
 
-      {cart.length === 0 ? (
-        <div className={styles.emptyCart}>
-          <p>Su carrito está vacío</p>
-          <button onClick={goToMenu}>
-            Ver Menú
-          </button>
-        </div>
+          {cart.length === 0 ? (
+            <div className={styles.emptyCart}>
+                <p>Su carrito está vacío</p>
+                <button onClick={goToMenu}>
+                   Ver Menú
+                </button>
+            </div>
       ) : (
         <>
           {cart.map((i) => (
