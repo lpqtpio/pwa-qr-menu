@@ -164,23 +164,25 @@
   }
 
   
- .firstBlock h1 {/*Title*/
-    font-size: 1.6rem; /* slightly bigger */
+ .firstBlock h1 {/*Restaurant Rissoto*/
+    font-size: 3rem; /* slightly bigger */
     padding: 0.6rem 1rem;
     line-height: 1.2;
     height:30vh;
   }
+
  .imageBackground{
    display: block;
    margin-bottom: 10px;
  }
   .inputWrapper {
+    position:sticky;
+    margin-bottom:0;
     width:100%;
-    height: auto;
+    height: 9rem;
     padding:1rem;   
     gap: 1rem;           
     border-radius: 24px 24px 0 0; 
-    margin-bottom:0;
   }
    .firstBlock h1{
     margin-top:1rem;
@@ -188,10 +190,10 @@
    }
   .inputWrapper h3 {
     width:100%;
-    height: auto;
-    font-size: 16px;     /* more readable */
-    line-height: 10px;
-    padding: 15px;
+    height: 2.5rem;
+    font-size: 1.9rem;     /* more readable */
+   
+    padding: 0.9rem;
   }
 
   .input {
@@ -200,19 +202,19 @@
     padding-left: 5px;
     padding-top:10px;
     padding-bottom:10px;
-    height:auto;           
-    font-size: 16px;
+    height:2.5rem;           
+    font-size: 1.9rem;
   }
 
   .button {
     width:100%;
     display:flex;
     text-align: center;
-    padding-top:10px;
-    padding-bottom:10px;
-    font-size:17px;
-    height: auto;
-    font-size: 17px;
+    padding-top:0.9rem;
+    padding-bottom:0.9rem;
+    font-size:2rem;
+    height: 2.5rem;
+    
   }
  
 }
