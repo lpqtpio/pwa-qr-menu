@@ -160,11 +160,13 @@ export default function Menu() {
             </div>
             
             <div className={styles.dishInfo}>
+            <div className={styles.nameAndPrice}>
               <h3 className={styles.dishName}>{dish.name}</h3>
+              <span className={styles.dishPrice}>${dish.price.toFixed(2)}</span>
+            </div>
               <p className={styles.dishDescription}>{dish.description}</p>
               
               <div className={styles.dishFooter}>
-                <span className={styles.dishPrice}>${dish.price.toFixed(2)}</span>
                 <button 
                   className={styles.addButton}
                   onClick={() => addToCart({
@@ -175,7 +177,7 @@ export default function Menu() {
                     imageUrl: dish.image
                   })}
                 >
-                  Añadir
+                  Odenar Ahora
                 </button>
               </div>
 

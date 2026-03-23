@@ -1,13 +1,11 @@
 .container {
    position: relative;
-   display: block;
+   display: flex;
    flex-direction: column;
   width: 100%;
-  min-height: 83vh;
+  min-height: 85vh;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  margin:0 auto;
   border-radius: 12px;
   
 }
@@ -29,7 +27,7 @@
   position: relative;
   z-index: 2;
   color: rgb(192, 126, 40);
-  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  font-size: 25px;
   text-align: center;
   text-shadow: 2px 2px 4px #180f03; 
   padding: 0 1rem;
@@ -37,18 +35,21 @@
 .bienvenido{
   font-weight:600;
   font-family:'Brush Script MT', cursive;
+  font-size:18px;
 }
 /* New class for the input wrapper */
 .inputWrapper {/*ThisIs A containerAll TheFields/Block*/
+  position:fixed;
+  margin-bottom:0;
   display: flex;
   flex-direction: column;
-  width:90%;
+  width:100%;
   height:auto;
-   position: relative;
+  
   z-index: 2;
   background: rgb(247, 202, 144);
   border-radius: 20px 20px 0 0;
-  padding: 1rem;
+  padding: 2rem;
   margin:0 auto;
  
   /* subtle elevation */
@@ -56,16 +57,24 @@
   margin-top:5px;
 }
 .inputWrapper h3 {/*Escriba el numero de mesa*/
-   font-size:18px;
-  color: #444;
+  
+  display:flex;
+  justify-content: center;
   text-align: center;
+  font-size:18px;
+  color: #e8dfdf;
+ 
+  padding-top:10px;
+  padding-bottom:10px;
+
 }
 
 /* Class for input field */
 .input {/*Numero de mesa Here*/
    width: 100%;
-  height: auto;
-  padding: 0.3  1rem;
+  height: fit-content;
+  padding-top:10px;
+  padding-bottom:10px;
   font-size: 16px;
   border-radius: 12px;
   border: 1px solid rgb(224, 207, 207);
@@ -84,16 +93,19 @@
 /* Class for button */
 .button {
   width: 100%;
-  height: auto;
+  height: fit-content;
   border-radius: 14px;
-   padding: 10px  1rem;
+   padding-top:10px;
+   padding-bottom:10px;
   border: none;
-  font-size: 1.1rem;
+  font-size: 16px;
   font-weight: 600;
   color: white;
   background: #ff8c42;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  margin-top:12px;
+  margin-bottom:12px;
 }
 /* gradient animation */
 @keyframes gradientMove {
@@ -121,8 +133,8 @@
 @media (max-width: 768px) {
   .inputWrapper {
     width:100%;
-    height: 3rem;
-    margin-top: 2rem;
+    height:auto;
+    margin-top: 1rem;
   }
 
   .container {
@@ -163,8 +175,11 @@
     margin-top:1rem;
    }
   .inputWrapper h3 {
-    font-size: 1.05rem;     /* more readable */
-    line-height: 1.3;
+    width:100%;
+    height: auto;
+    font-size: 16px;     /* more readable */
+    line-height: 10px;
+    padding: 15px;
   }
 
   .input {
@@ -178,6 +193,7 @@
   }
 
   .button {
+    width:100%;
     display:flex;
     text-align: center;
     padding-top:10px;
