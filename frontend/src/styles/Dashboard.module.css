@@ -2,19 +2,33 @@
    position: relative;
    display: flex;
    flex-direction: column;
+   justify-content: center;
+   flex-wrap:nowrap;
   width: 100%;
-  min-height: 85vh;
+  min-height: 100vh;
   overflow: hidden;
   margin:0 auto;
   border-radius: 12px;
+  padding-left:10px;
+  padding-right:10px;
+  box-sizing: border-box;
+  background-color:wheat;
   
+}
+.firstBlock{
+ display:block;
+ margin-left: 10px;
+ margin-right: 10px;
+ margin-top: 8px;
+ margin-bottom: 8px;
+
 }
 
 .imageBackground {
    position: absolute;
   inset: 0;
   width: 100%;
-  height: 90%;
+  height: 100%;
   object-fit: cover;
   border-radius: 12px;
   margin-bottom:0;
@@ -39,22 +53,24 @@
 }
 /* New class for the input wrapper */
 .inputWrapper {/*ThisIs A containerAll TheFields/Block*/
-  position:fixed;
-  margin-bottom:0;
+ 
   display: flex;
   flex-direction: column;
-  width:100%;
-  height:auto;
+  
+ margin-left: 10px;
+ margin-right: 10px;
+ margin-top: 8px;
+ margin-bottom: 8px;
   
   z-index: 2;
   background: rgb(247, 202, 144);
   border-radius: 20px 20px 0 0;
-  padding: 2rem;
-  margin:0 auto;
+ 
+ 
  
   /* subtle elevation */
   box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
-  margin-top:5px;
+  
 }
 .inputWrapper h3 {/*Escriba el numero de mesa*/
   
@@ -107,18 +123,7 @@
   margin-top:12px;
   margin-bottom:12px;
 }
-/* gradient animation */
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+
 .button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
@@ -153,26 +158,33 @@
 /*@media max-width:360px*/
 /*@media max-width:360px*/
 @media (max-width: 360px) {
- .container h1 {
+  .container{
+    display: block;
+
+  }
+
+  
+ .firstBlock h1 {/*Title*/
     font-size: 1.6rem; /* slightly bigger */
     padding: 0.6rem 1rem;
     line-height: 1.2;
     height:30vh;
   }
  .imageBackground{
-   height: 45vh;
+   display: block;
    margin-bottom: 10px;
  }
   .inputWrapper {
     width:100%;
-    height: 15vh;
+    height: auto;
     padding:1rem;   
     gap: 1rem;           
     border-radius: 24px 24px 0 0; 
-    margin-top:1.6rem;
+    margin-bottom:0;
   }
-   .container h1{
+   .firstBlock h1{
     margin-top:1rem;
+    font-size: 25px
    }
   .inputWrapper h3 {
     width:100%;

@@ -25,15 +25,15 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  z-index: 1000;
-  background: #070707;
-   height:auto;
-   width:auto;
+   z-index: 1000;
+   background: rgb(221, 243, 187);
+   height:3.5rem;
+  width:100%;
     margin-top:10px;
     margin-bottom:15px;
      scrollbar-width: thin;
     scroll-padding: 0.5rem;
-  box-sizing: border-box;
+   box-sizing: border-box;
  
   
 }
@@ -60,14 +60,14 @@
   align-items: center;
   justify-content: center;
   min-width: 110px; /* Slightly smaller for 360px */
-  height: 80px;
+  height: 3rem;
   width: 160px; /* Fixed width */
   padding: 0.4rem 0.8rem 0.4rem 0.8rem;
   background: wheat;
   border: none;
   border-radius: 16px;
   color: #666;
-  font-size: 15px;
+  font-size: 2rem;
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
@@ -102,7 +102,7 @@
 
 .categoryName {/*the categhories name ...?*/
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.2rem;
    white-space: nowrap;
 }
 
@@ -110,7 +110,7 @@
 .dishesGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 2rem;
   padding: 15px 8px;
 }
 
@@ -183,22 +183,22 @@
 }
 
 .dishInfo {/*The part under-image*/
-  padding: 0.75rem;
-  flex: 1;
+ 
+ 
   display: flex;
   flex-direction: column;
-  font-size: 16px;
+  
 }
 .nameAndPrice {/*Container( Name & Price )*/
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width:100%;
   flex-direction: row;
   margin-top:8px;
   margin-bottom:8px;
 }
 .dishName {
-  font-size: 16px;
+  font-size: 2rem;
   font-weight: 600;
   padding-left:5px;
   color: chocolate;
@@ -213,8 +213,8 @@
 
 }
 .dishPrice {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 600;
   color: chocolate;
   margin-bottom: 4px;
   margin-top:4px;
@@ -227,7 +227,7 @@
   justify-content: center;
   text-align: center;
   color: #999;
-  font-size: 15px;
+  font-size: 1.9rem;
   margin-top:5px;
   margin-bottom:10px;
  
@@ -248,11 +248,10 @@
   /*width:38%;*/
   width:85%;
   display: flex;
-  height:auto;
+  height:2rem;
   justify-content: center;
   text-align: center;
   padding-top:8px;
-  font-size: 16px;
   padding-bottom:8px;
   background: linear-gradient(135deg, #ec9954 0%, #eb9a3f 100%);
   color: white;
@@ -261,6 +260,7 @@
   cursor: pointer;
   transition: opacity 0.3s;
   margin-bottom:20px;
+  font-size:2.2rem;
  
 }
 
@@ -287,8 +287,9 @@
     position: fixed;
     bottom:0;
     width:100%;
-    height:auto;
+    height:3rem;
     display:flex;
+    flex-direction: row;
     gap:12px;
     padding-top:12px;
     padding-bottom:12px;
@@ -311,7 +312,7 @@
   padding-bottom:10px;
   background: wheat;
   border-radius: 12px;
-  font-size: 15px;
+  font-size: 2rem;
   text-decoration: none;
    gap: 0.5rem;
   color: rgb(233, 96, 12);
@@ -323,7 +324,7 @@
 }
 
 .cartButton{/*Button ver carrito*/
-   flex: 2;
+   flex: 1;
    display: flex;
    flex-direction:column;
    justify-content: center;
@@ -331,10 +332,10 @@
    border-radius: 12px;
    background: linear-gradient(135deg, #5349e6 0%, #d64f1a 100%);
    color: white;
-   justify-content: center;
+  
    border:1px solid rgb(112, 107, 107);
-   align-items: center;
-    font-size: 15px;
+   
+    font-size: 2rem;
      font-weight: bold;
    cursor: pointer;
    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
