@@ -18,7 +18,7 @@
 
 .categoryTabs { /* CONTAINER **Title&Tabs*/
   position: fixed;
-  top:1rem;
+  top:0.3rem;
 
   left:50%;
   transform: translateX(-50%);
@@ -51,7 +51,9 @@
   flex-direction: row;
   justify-content: center;
   text-align: center;
- 
+  padding-bottom: 0.5rem;
+  padding-left:1rem;
+  padding-right:1rem;
   font-size: 2.1rem;
   font-weight: 600;
   color: chocolate;
@@ -80,6 +82,7 @@
   padding: 0.5rem 0.25rem;
    padding-left: 0.5rem;
   padding-right: 0.5rem;
+  border-radius: 5px;
   scrollbar-width: none;
   margin-top:0;
   margin-bottom:0;
@@ -156,7 +159,7 @@
 
 /* Dishes Grid Contain the selected items */
 .dishesGrid {/*Container Cards-Items*/
-  margin-top:11rem;
+  margin-top:13rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
