@@ -16,14 +16,7 @@
   background-color:wheat;
   
 }
-.firstBlock{
- display:block;
- margin-left: 10px;
- margin-right: 10px;
- margin-top: 8px;
- margin-bottom:0;
 
-}
 
 .imageBackground {
    position: absolute;
@@ -38,11 +31,13 @@
 /* Dark overlay for readability */
 
 
-.firstBlock h1 {/*Bien venido a Nuestro restaurant*/
-  position: absolute;
+.container h1 {/*Bien venido a Nuestro restaurant*/
+ 
   display:flex;
+  justify-content: center;
+  text-align: center;
   flex-direction: column;
-  z-index: 2;
+  z-index: 8;
   color: rgb(192, 126, 40);
   font-size:2.5rem;
   text-align: center;
@@ -62,23 +57,24 @@
  display: flex;
  justify-content: center;
   flex-direction: column;
-   margin-left: 1rem;
-   margin-right: 1rem;
+  margin-left:2rem;
+  margin-right:2rem;
   z-index: 4;
   background: rgb(247, 202, 144);
   border-radius: 20px 20px 20px 20px;
   box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
   gap:1.5rem;
+  padding-bottom:2rem;
   
 }
 .inputWrapper h3 {/*Escriba el numero de mesa*/
   display:flex;
   justify-content: center;
   text-align: center;
-  font-size:2.5rem;
+  font-size:2rem;
   color:brown;
-  padding-top:10px;
-  padding-bottom:10px;
+  padding-top:1rem;
+  padding-bottom:1rem;
 }
 /* Class for input field */
 .input {/*Numero de mesa Here*/
@@ -100,7 +96,7 @@
 .input:focus {
   outline: none;
   border-color: rgb(247, 182, 99);
-  background: rgb(55, 50, 50);
+  background: rgb(218, 210, 210);
 }
 
 /* Class for button */
@@ -115,14 +111,14 @@
    padding-top:1.5rem;
    padding-bottom:1.5rem;
    border: none;
-   font-size: 2rem;
+   font-size: 1.9rem;
    font-weight: 600;
    color: white;
    background: #ff8c42;
    cursor: pointer;
    transition: transform 0.15s ease, box-shadow 0.15s ease;
    margin-top:0.8rem;
-   margin-bottom:3rem;
+   margin-bottom:2rem;
    margin:0 auto;
 
 }

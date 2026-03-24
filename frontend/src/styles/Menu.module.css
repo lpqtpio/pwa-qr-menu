@@ -16,29 +16,28 @@
 
 /* Category Tabs */
 .categoryTabs { /* CONTAINER **Category Tabs */
-  position: sticky;
+  position: fixed;
+  top:0;
  
   display: flex;
-  align-items:center;
-  flex-direction: row;
-  gap: 1rem;
-  padding:0.5rem;
+  
+   gap: 0.75rem;
+   padding:0.5rem 0.75rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-   z-index: 1000;
-   background: lemonchiffon;
+  background: lemonchiffon;
+  z-index: 1000;
    height:5rem;
   width:100%;
     margin-top:0.5rem;
     margin-bottom:0.5rem;
-     scrollbar-width: thin;
+     scrollbar-width:none;
     scroll-padding: 0.5rem;
    box-sizing: border-box;
  
   
 }
-
 
 .categoryTabs::-webkit-scrollbar {
   display: none;
@@ -55,28 +54,29 @@
 .categoryTab {
   flex: 0 0 auto;
   scroll-snap-align: start;
-   display: flex;
+
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
  
-  height:5rem;
-  width: 5rem;
-padding-left:0.5rem;
-padding-right:0.5rem;
-padding-bottom:0.5rem;
-padding-top:0.5rem;
-   margin-top:0.5rem;
+  min-width: 72px;        /* wider base */
+  max-width: 100px;       /* prevents huge tabs */
+  padding: 0.6rem 0.5rem;
+
+   margin-top:1rem;
    margin-bottom:0.5rem;
   background: wheat;
   border: 1px solid gray;
   border-radius: 12px;
   color: #666;
   font-size: 1.9rem;
-  font-weight: 400;
+  font-weight: 500;
+  text-align: center;
+  white-space: normal;/*allow wrapping*/
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition:transform 0.15s ease, box-shadow 0.15s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   flex-shrink: 0;
     
@@ -96,19 +96,23 @@ padding-top:0.5rem;
   background: linear-gradient(135deg, #f7b85a 0%, #e27d1f 100%);
   color: white;
    font-weight: 600;
-  box-shadow: 0 4px 12px rgba(226, 125, 31, 0.3);
+  box-shadow: 0 4px 12px rgba(35, 33, 31, 0.3);
    transform: scale(1.05);
 }
 
 .categoryIcon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .categoryName {/*the categhories name ...?*/
   font-weight: 600;
   font-size: 2rem;
    white-space: nowrap;
+   text-align: center;
 }
 
 /* Dishes Grid Contain the selected items */
@@ -294,23 +298,25 @@ padding-top:0.5rem;
   font-size: 1.5rem;
   opacity: 0.8;
 }
-.linkButton{/*CONTAINER** & Button*/
+.linkButton{/*CONTAINER**: ButtonWhats & Link*/
     position: fixed;
-    bottom:0;
+    bottom:0.5rem;
     width:100%;
-    height:6rem;
+    height:7rem;
+     margin-left: 1rem;
+    margin-right: 1rem;
     display:flex;
+    justify-content: center;
     flex-direction: row;
     gap:12px;
-    padding-top:1.5rem;
-    padding-bottom:1.5rem;
-    padding-left:1.5rem;
-    padding-right:1.5rem;
+   
     background-color: whitesmoke;
-    border-top: 1px solid #ddd;
+    border: 1px solid #ddd;
+    border-radius:0.5rem;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
     z-index: 30;
-    margin:0 auto;
+  
+  
 
 }
 
@@ -318,7 +324,7 @@ padding-top:0.5rem;
   flex: 1;
   height: 4rem;
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   padding-top:0.8rem;
@@ -339,7 +345,7 @@ padding-top:0.5rem;
 .cartButton{/*Button ver carrito*/
    flex: 1;
    display: flex;
-   flex-direction:column;
+   flex-direction:row;
    justify-content: center;
    align-items: center;
    border-radius: 1rem;
