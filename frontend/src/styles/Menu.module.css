@@ -47,6 +47,7 @@
 .containerTitle{/*container OF: .categoriesTitle*/
   margin-top:0;
   margin-bottom:0;
+  height: 6rem;
    background-color:green;
    padding-top:2rem;
    padding-bottom:0.3rem;
@@ -61,8 +62,7 @@
   padding-right:1rem;
   font-size: 2.1rem;
   font-weight: 600;
-  color: chocolate;
- 
+  color: rgb(210, 81, 30);
   
 }
 
