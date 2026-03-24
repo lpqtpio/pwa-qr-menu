@@ -125,6 +125,7 @@ export default function Menu() {
         <div className={styles.containerTitle}>
            <h1 className={styles.categoriesTitle}>CATEGORÍAS</h1>
         </div>
+        <div className={styles.tabsRow}>
         {categories.map((category) => (
           <button
             key={category.id}
@@ -137,6 +138,7 @@ export default function Menu() {
             <span className={styles.categoryName}>{category.name}</span>
           </button>
         ))}
+        </div>
       </div>
 
       {/* Dishes Grid */}

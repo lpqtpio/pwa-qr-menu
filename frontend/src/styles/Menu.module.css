@@ -13,26 +13,7 @@
     box-sizing: border-box;
     background-color:lemonchiffon;
 }
-.containerTitle{
-  position:fixed;
-  top:1rem;
-   display: flex;
-   justify-content: center;
-   flex-direction: row;
-   text-align: center;
-   margin-bottom:1rem;
-}
-.categoriesTitle {/*CATEGORIAS*/
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  padding-top:0.5rem;
-  padding-bottom:0.5rem;
-  font-size: 2.2rem;
-  color: chocolate;
-  
-}
+
 /* Category Tabs */
 
 .categoryTabs { /* CONTAINER **Category Tabs */
@@ -54,7 +35,7 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   background: lemonchiffon;
-  z-index: 10;
+  z-index: 1000;
     margin-bottom:0.5rem;
      scrollbar-width:none;
     scroll-padding: 0.5rem;
@@ -63,7 +44,21 @@
   
 }
 
-
+.containerTitle{
+  padding: 0 1rem 0.3rem 1rem;
+}
+.categoriesTitle {/*CATEGORIAS*/
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  padding-top:0.5rem;
+  padding-bottom:0.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: chocolate;
+  
+}
 .categoryTabs::-webkit-scrollbar {
   display: none;
 }
@@ -74,6 +69,22 @@
 .categoryTabs::-webkit-scrollbar-thumb {
   background: #eab166;
   border-radius: 4px;
+}
+/* Horizontal scroll row */
+.tabsRow {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
+}
+
+.tabsRow::-webkit-scrollbar {
+  display: none;
 }
 
 .categoryTab {
