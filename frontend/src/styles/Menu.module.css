@@ -7,7 +7,7 @@
   margin:0 auto;
   padding:1rem;
   border-radius: 18px; 
-    overflow-x: hidden;
+    
     margin-top:0;
     padding-bottom:0.5rem;
     box-sizing: border-box;
@@ -26,8 +26,8 @@
      flex-direction:column;
    height:auto;
    gap: 0.75rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  /*overflow-x: auto;
+  scroll-snap-type: x mandatory;*/
   -webkit-overflow-scrolling: touch;
   /* background: lemonchiffon;*/
   z-index: 1000;
@@ -59,9 +59,7 @@
   
 }
 
-.categoryTabs::-webkit-scrollbar {
-  display: none;
-}
+
 .categoryTabs::-webkit-scrollbar-track {
   background: rgb(52, 51, 51);
 }
@@ -73,6 +71,16 @@
 /* Horizontal scroll row */
 .tabsRow{/*CONTAINERofEachTAB*/
   display: flex;
+  gap:0.75rem;
+
+    overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 0.5rem 0.25rem;
+   padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  scrollbar-width: none;
   margin-top:1rem;
   margin-bottom:1rem;
   background-color: blue;
