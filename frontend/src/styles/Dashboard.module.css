@@ -75,14 +75,14 @@ padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
 .bienvenido{
   font-weight:600;
   font-family:'Brush Script MT', cursive;
-  font-size:2.9rem;
+  font-size:3rem;
   margin-top:2rem;
 }
 .inputWrapper h3 {/*Escriba el numero de mesa*/
   display:flex;
   justify-content: center;
   text-align: center;
-  font-size:2rem;
+  font-size:2.3rem;
   color:brown;
   padding-top:1rem;
   padding-bottom:1rem;
