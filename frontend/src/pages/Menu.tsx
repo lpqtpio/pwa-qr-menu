@@ -122,7 +122,7 @@ export default function Menu() {
       {/* Category Tabs */}
       <div className={styles.categoryTabs}>
           <div className={styles.containerTitle}>
-              <h1 className={styles.categoriesTitle}>CATEGORÍAS</h1>
+              <h1 className={styles.categoriesTitle}>CATEGORÍAS & MENÚ</h1>
           </div>
             <div className={styles.tabsRow}>
                {categories.map((category) => (

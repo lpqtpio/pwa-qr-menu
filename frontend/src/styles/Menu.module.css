@@ -41,8 +41,8 @@
 }
 
 .containerTitle{/*container OF: .categoriesTitle*/
-  margin-top:1rem;
-  margin-bottom:1rem;
+  margin-top:0;
+  margin-bottom:0;
    background-color: green;
 }
 .categoriesTitle {/* title "CATEGORIAS" */
@@ -81,7 +81,7 @@
    padding-left: 0.5rem;
   padding-right: 0.5rem;
   scrollbar-width: none;
-  margin-top:1rem;
+  margin-top:0.3rem;
   margin-bottom:1rem;
   background-color: blue;
 }
@@ -156,7 +156,7 @@
 
 /* Dishes Grid Contain the selected items */
 .dishesGrid {/*Container Cards-Items*/
-  margin-top:1rem;
+  margin-top:3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -298,17 +298,17 @@
 
 
 
-.addButton {
+.addButton {/*ordenar ahora*/
   /*width:38%;*/
   width:85%;
   display: flex;
-  height:3.5rem;
+  height:3.6rem;
   justify-content: center;
   text-align: center;
   padding-top:0.7rem;
   padding-bottom:0.7rem;
 
-  background: linear-gradient(135deg, #ec9954 0%, #eb9a3f 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, red 100%);
   color: white;
   border: 1px solid rgb(250, 133, 38);
   border-radius: 20px;
