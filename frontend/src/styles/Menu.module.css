@@ -38,6 +38,9 @@
   box-sizing: border-box;
   padding-bottom:0;
   background-color: red;  /*OnlyToProofLocation*/
+
+  margin-left:0.3rem;
+  margin-right:0.3rem;
   
 }
 
@@ -45,6 +48,7 @@
   margin-top:0;
   margin-bottom:0;
    background-color:green;
+   padding-bottom:0.3rem;
 }
 .categoriesTitle {/* title "CATEGORIAS" */
   display:flex;
@@ -86,6 +90,8 @@
   scrollbar-width: none;
   margin-top:0;
   margin-bottom:0;
+  margin-left:0.6rem;
+  margin-right:0.6rem;
   background-color: black;
 }
 
@@ -227,7 +233,7 @@
   top: 12px;
   right: 12px;
   background: orange;
-  color: rgb(213, 208, 204);
+  color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -253,10 +259,10 @@
   margin-bottom:8px;
 }
 .dishName {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 400;
-  padding-left:0.3rem;
-  color: chocolate;
+  padding-left:0.5rem;
+  color: rgb(210, 81, 30);
   margin-bottom:6px;
   margin-top:6px;
  /* margin-left:3px;*/
@@ -269,9 +275,9 @@
 
 }
 .dishPrice {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 500;
-  color: chocolate;
+  color: rgb(210, 81, 30);
   margin-bottom: 0.5rem;
   margin-top:0.5rem;
   padding-right:1rem;
@@ -309,9 +315,9 @@
   justify-content: center;
   text-align: center;
   padding-top:0.8rem;
-  padding-bottom:0.8rem;
+  padding-bottom:0.9rem;
 
-  background: linear-gradient(180deg, brown 0%, #0a0a0a 100%);
+  background: linear-gradient(180deg, rgb(225, 112, 41) 0%, #0a0a0a 100%);
   color: white;
   border: 1px solid rgb(248, 49, 27);
   border-radius: 50px;
@@ -344,7 +350,7 @@
 }
 .linkButton{/*CONTAINER**: ButtonWhats & Link*/
       position: fixed;
-      bottom:1rem;
+      bottom:0;
         left: 50%;
         transform: translateX(-50%);
         width:calc(100% - 2rem);
