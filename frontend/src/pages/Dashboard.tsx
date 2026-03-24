@@ -22,20 +22,19 @@ export default function Dashboard() {
   return (
     <div className={styles.container}>
 
-         <h1>Restaurant Rissoto 
-            <br />
-              <span className={styles.bienvenido}>
-              ¡Bienvenid@...!
-              </span>
-          </h1>
         <img 
              className={styles.imageBackground} 
              src={backgroundImage}
              alt="img Italian Restaurant"
         />
-        
      
       <div className={styles.inputWrapper}>
+         <h1>Restaurant Rissoto 
+             <br />
+                <span className={styles.bienvenido}>
+                ¡Bienvenid@...!
+                </span>
+         </h1>
         <h3>Escriba el número de Mesa:</h3>
           <input
             type="number"

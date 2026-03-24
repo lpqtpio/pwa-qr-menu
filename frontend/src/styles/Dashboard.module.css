@@ -28,19 +28,36 @@
   margin-bottom:6rem;
   padding-bottom:0;
 }
-/* Dark overlay for readability */
 
 
+
+.inputWrapper {/* containerAll TheFields/Block*/
+  position:fixed;
+  bottom: 1rem;
+  width:100%;
+  height:auto;
+ display: flex;
+ justify-content: center;
+  flex-direction: column;
+  margin-left:2rem;
+  margin-right:2rem;
+  z-index: 6;
+  background: rgb(247, 202, 144);
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+  gap:1.5rem;
+  padding-bottom:2rem;
+  
+}
 .container h1 {/*Bien venido a Nuestro restaurant*/
  
   display:flex;
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  z-index: 8;
+  
   color: rgb(192, 126, 40);
-  font-size:2.5rem;
-  text-align: center;
+  font-size:4rem;
   text-shadow: 2px 2px 4px #180f03; 
   margin-top:1rem;
   
@@ -48,24 +65,7 @@
 .bienvenido{
   font-weight:600;
   font-family:'Brush Script MT', cursive;
-  font-size:1.8rem;
-}
-/* New class for the input wrapper */
-.inputWrapper {/* containerAll TheFields/Block*/
- position:fixed;
- margin-bottom: 0;
- display: flex;
- justify-content: center;
-  flex-direction: column;
-  margin-left:2rem;
-  margin-right:2rem;
-  z-index: 4;
-  background: rgb(247, 202, 144);
-  border-radius: 20px 20px 20px 20px;
-  box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
-  gap:1.5rem;
-  padding-bottom:2rem;
-  
+  font-size:2rem;
 }
 .inputWrapper h3 {/*Escriba el numero de mesa*/
   display:flex;
