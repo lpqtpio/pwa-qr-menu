@@ -119,12 +119,12 @@ export default function Menu() {
 
   return (
     <div className={styles.container}>
+       
+      {/* Category Tabs */}
+      <div className={styles.categoryTabs}>
         <div className={styles.containerTitle}>
            <h1 className={styles.categoriesTitle}>CATEGORÍAS</h1>
         </div>
-      {/* Category Tabs */}
-      <div className={styles.categoryTabs}>
-      
         {categories.map((category) => (
           <button
             key={category.id}
