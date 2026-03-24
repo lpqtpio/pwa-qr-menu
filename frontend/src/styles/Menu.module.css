@@ -19,13 +19,15 @@
 .categoryTabs { /* CONTAINER **Title&Tabs*/
   position: fixed;
   top:1rem;
+
   left:50%;
   transform: translateX(-50%);
   width: calc(100% - 2rem);
-     display: flex;
-     flex-direction:column;
+
+   display: flex;
+   flex-direction:column;
    height:auto;
-   gap: 0.5rem;
+   gap: 0.1rem;
   
   -webkit-overflow-scrolling: touch;
  
@@ -34,7 +36,7 @@
   scrollbar-width:none;
   scroll-padding: 0.5rem;
   box-sizing: border-box;
-  
+  padding-bottom:0;
   background-color: red;  /*OnlyToProofLocation*/
   
 }
@@ -42,7 +44,7 @@
 .containerTitle{/*container OF: .categoriesTitle*/
   margin-top:0;
   margin-bottom:0;
-   background-color: black;
+   background-color:green;
 }
 .categoriesTitle {/* title "CATEGORIAS" */
   display:flex;
@@ -79,9 +81,9 @@
    padding-left: 0.5rem;
   padding-right: 0.5rem;
   scrollbar-width: none;
-  margin-top:0.3rem;
-  margin-bottom:1rem;
-  background-color: blue;
+  margin-top:0;
+  margin-bottom:0;
+  background-color: black;
 }
 
 .tabsRow::-webkit-scrollbar {
@@ -154,7 +156,7 @@
 
 /* Dishes Grid Contain the selected items */
 .dishesGrid {/*Container Cards-Items*/
-  margin-top:5rem;
+  margin-top:11rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -219,13 +221,13 @@
 
 .popularBadge {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 12px;
+  right: 12px;
   background: orange;
-  color: rgb(128, 60, 11);
+  color: rgb(213, 208, 204);
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: bold;
   z-index: 1;
   border:1px solid rgb(224, 217, 217);
@@ -303,16 +305,16 @@
   height:3.6rem;
   justify-content: center;
   text-align: center;
-  padding-top:0.7rem;
-  padding-bottom:0.7rem;
+  padding-top:0.8rem;
+  padding-bottom:0.8rem;
 
-  background: linear-gradient(180deg, #0a0a0a 0%, brown 100%);
+  background: linear-gradient(180deg, brown 0%, #0a0a0a 100%);
   color: white;
-  border: 1px solid rgb(250, 133, 38);
+  border: 1px solid rgb(248, 49, 27);
   border-radius: 50px;
   cursor: pointer;
   transition: opacity 0.3s;
-  margin-bottom:20px;
+  margin-bottom:10px;
   font-size:2rem;
  
 }
@@ -328,7 +330,7 @@
 .dietaryIcons {/*Container*/
   display: flex;
   gap: 0.3rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   margin-left:1rem;
   margin-bottom:1rem;
 }
