@@ -1,5 +1,5 @@
 {
-  "restaurantName": "Delicious Bites",
+  "restaurantName": "Restaurant Rissoto",
   "currency": "$",
   "categories": [
     {
@@ -12,12 +12,21 @@
       "active": true
     },
     {
+      "id": "soups",
+      "name": "Sopas",
+      "description": "Deliciosas para el medio día",
+      "icon": "🍛",
+      "image": "/assets/images/categories/dessert2.jpg",
+      "order": 2,
+      "active": true
+    },
+    {
       "id": "main-course",
-      "name": "Plato Principal",
+      "name": "Especiales",
       "description": "Abundantes y satisfactorios",
       "icon": "🍛",
       "image": "/assets/images/categories/roll1.jpg",
-      "order": 2,
+      "order": 3,
       "active": true
     },
     {
@@ -26,7 +35,7 @@
       "description": "Pizza Italiana con ingredientes frescos",
       "icon": "🍕",
       "image": "/assets/images/categories/pizza1.jpg",
-      "order": 3,
+      "order": 4,
       "active": true
     },
     {
@@ -35,7 +44,7 @@
       "description": "Pasta fresca hecha en casa",
       "icon": "🍝",
       "image": "/assets/images/categories/pasta2.jpg",
-      "order": 4,
+      "order": 5,
       "active": true
     },
     {
@@ -44,7 +53,7 @@
       "description": "Frescos recién comprados",
       "icon": "🦐",
       "image": "/assets/images/categories/ostras1.jpg",
-      "order": 5,
+      "order": 6,
       "active": true
     },
     {
@@ -53,7 +62,7 @@
       "description": "Dulce final para su comida",
       "icon": "🍰",
       "image": "/assets/images/categories/dessert4.jpg",
-      "order": 6,
+      "order": 7,
       "active": true
     },
     {
@@ -62,7 +71,7 @@
       "description": "Refrescantes bebidas y tragos",
       "icon": "🥤",
       "image": "/assets/images/categories/drinks3.jpg",
-      "order": 7,
+      "order": 8,
       "active": true
     },
     {
@@ -71,14 +80,90 @@
       "description": "Frescas y Saludables",
       "icon": "🥗",
       "image": "/assets/images/categories/salad2.webp",
-      "order": 8,
+      "order": 9,
       "active": true
     }
   ],
   "dishes": [
     {
       "id": "app-001",
-      "name": "Garlic Bread",
+      "name": "Sopa Esparragos",
+      "description": "Esparragos, papa, yerbitas,queso",
+      "price": 3.50,
+      "image": "/assets/images/soups/asparragus2.jpg",
+      "category": "soups",
+      "available": true,
+      "ingredients": ["Esparragos", "Ajo", "Papa", "Perejil", "Queso"],
+      "spicy": false,
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": false,
+      "popular": true
+    },
+    {
+      "id": "app-002",
+      "name": "Sopa Espinacas",
+      "description": "Espinaca, papa, yerbitas,queso",
+      "price": 3.99,
+      "image": "/assets/images/soups/asparragus1.jpg",
+      "category": "soups",
+      "available": true,
+      "ingredients": ["Espinaca", "Ajo", "Papa", "Perejil", "Queso"],
+      "spicy": false,
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": false,
+      "popular": true
+    },
+    {
+      "id": "app-003",
+      "name": "Sopa de Pescado",
+      "description": "Pescado, yuca, yerbitas",
+      "price": 3.99,
+      "image": "/assets/images/soups/fish1.jpg",
+      "category": "soups",
+      "available": true,
+      "ingredients": ["Pescado", "Ajo", "Yuca", "Perejil", "Arroz"],
+      "spicy": false,
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": false,
+      "popular": true
+    },
+    {
+      "id": "app-004",
+      "name": "Sopa de Calamares",
+      "description": "Calamares, arroz, yerbitas, espinacas",
+      "price": 3.99,
+      "image": "/assets/images/soups/soup1.jpg",
+      "category": "soups",
+      "available": true,
+      "ingredients": ["Calamares", "Ajo", "Arroz", "Perejil", "Espinaca"],
+      "spicy": false,
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": false,
+      "popular": true
+    },
+    {
+      "id": "app-005",
+      "name": "Sopa de Fideos",
+      "description": "Fideos, queso, yerbitas, papa",
+      "price": 3.99,
+      "image": "/assets/images/soups/soup5.jpg",
+      "category": "soups",
+      "available": true,
+      "ingredients": ["Fideo", "Ajo", "Papa", "Perejil", "Queso"],
+      "spicy": false,
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": false,
+      "popular": true
+    },
+
+    {
+      "id": "app-001",
+      "name": "Garlic-Bread",
       "description": "Tostadas con ajo, mantequilla, yerbitas",
       "price": 3.99,
       "image": "/assets/images/appetizers/appetizer1.jpg",
@@ -93,7 +178,7 @@
     },
     {
       "id": "app-002",
-      "name": "Durazno Glaseado",
+      "name": "Durazno-Glaseado",
       "description": "Durazno glaseado sobre pasta hojaldre",
       "price": 5.99,
       "image": "/assets/images/appetizers/appetizer2.jpg",
@@ -109,7 +194,7 @@
     {
       "id": "app-003",
       "name": "Pan y Ensalada",
-      "description": "Medallones de baguette con ensalada fresca",
+      "description": "Medallones baguette con ensalada fresca",
       "price": 2.99,
       "image": "/assets/images/appetizers/appetizer3.jpg",
       "category": "appetizers",
@@ -124,7 +209,7 @@
     {
       "id": "app-004",
       "name": "Pan Picante",
-      "description": "Pan integral con queso parmesano y ajíes",
+      "description": "Pan integral con parmesano y ajíes",
       "price": 2.99,
       "image": "/assets/images/appetizers/appetizer4.jpg",
       "category": "appetizers",
@@ -153,7 +238,7 @@
     },
     {
       "id": "main-002",
-      "name": "Jamón al horno",
+      "name": "Jamón al Horno",
       "description": "Jamón maduro en salsa de tomate picante",
       "price": 5.99,
       "image": "/assets/images/specialty/roll1.jpg",
@@ -168,7 +253,7 @@
     },
     {
       "id": "main-003",
-      "name": "Sopa de Champiñones",
+      "name": "Sopa Champiñones",
       "description": "Champiñones, en salsa con Yerbitas",
       "price": 3.99,
       "image": "/assets/images/specialty/soup5.jpg",
@@ -184,7 +269,7 @@
     {
       "id": "pizza-001",
       "name": "Pizza de Jamón",
-      "description": "Pizza clásica con salsa de tomate, mozzarella y jamón",
+      "description": "Clásica con tomate, mozzarella, jamón",
       "price": 16.99,
       "image": "/assets/images/pizza/jam1.jpg",
       "category": "pizza",
@@ -199,7 +284,7 @@
     {
       "id": "pizza-002",
       "name": "Pizza Pepperoni",
-      "description": "Salsa de tomate, mozzarella y pepperoni",
+      "description": "Salsa de tomate, mozzarella, pepperoni",
       "price": 18.99,
       "image": "/assets/images/pizza/pizza1.jpg",
       "category": "pizza",
@@ -214,7 +299,7 @@
     {
       "id": "pizza-003",
       "name": "Pizza Vegetariana",
-      "description": "Pimientos, champiñones, cebolla, aceitunas y tomate",
+      "description": "Pimientos, champiñones, cebolla, aceitunas, tomate",
       "price": 17.99,
       "image": "/assets/images/pizza/pizza2.jpg",
       "category": "pizza",
@@ -228,7 +313,7 @@
     },
     {
       "id": "pizza-004",
-      "name": "Pizza Jamón y Queso",
+      "name": "Pizza Mixta",
       "description": "Jamón, queso, champiñones y aceitunas",
       "price": 17.99,
       "image": "/assets/images/pizza/pizzajam.jpg",
@@ -274,7 +359,7 @@
     {
       "id": "pasta-003",
       "name": "Penne Arrabbiata",
-      "description": "Salsa de tomate picante con ajo y chile rojo",
+      "description": "Tomate picante con ajo y chile rojo",
       "price": 5.99,
       "image": "/assets/images/pasta/pasta3.jpg",
       "category": "pasta",
@@ -289,7 +374,7 @@
     {
       "id": "pasta-004",
       "name": "Pasta Primavera",
-      "description": "Pasta con vegetales frescos de temporada",
+      "description": "Con vegetales frescos de temporada",
       "price": 2.99,
       "image": "/assets/images/pasta/pasta4.jpg",
       "category": "pasta",
@@ -304,7 +389,7 @@
     {
       "id": "dessert-001",
       "name": "Tiramisú",
-      "description": "Postre italiano clásico con café y mascarpone",
+      "description": "Italiano clásico con café y mascarpone",
       "price": 2.99,
       "image": "/assets/images/desserts/dessert1.jpg",
       "category": "desserts",
@@ -422,9 +507,39 @@
       "popular": true
     },
     {
+      "id": "beverage-005",
+      "name": "café",
+      "description": "Cafe arabigo con aroma",
+      "price": 4.99,
+      "image": "/assets/images/beverages/hotcoffe.jpg",
+      "category": "beverages",
+      "available": true,
+      "ingredients": ["Café", "Agua", "Azúcar"],
+      "spicy": false,
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": true,
+      "popular": true
+    },
+    {
+      "id": "beverage-006",
+      "name": "Capuchino",
+      "description": "Chocolate cremoso",
+      "price": 4.99,
+      "image": "/assets/images/beverages/hotchoc.jpg",
+      "category": "beverages",
+      "available": true,
+      "ingredients": ["Chocolate", "Crema de coco", "Agua", "Leche"],
+      "spicy": false,
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": true,
+      "popular": true
+    },
+    {
       "id": "salad-001",
       "name": "Ensalada Griega",
-      "description": "Ensalada fresca con aceitunas y queso feta",
+      "description": "Ensalada con aceitunas y queso feta",
       "price": 4.99,
       "image": "/assets/images/salads/salad1.webp",
       "category": "salads",
@@ -453,8 +568,8 @@
     },
     {
       "id": "salad-003",
-      "name": "Ensalada Mediterránea",
-      "description": "Ensalada mediterránea con aceitunas y queso de cabra",
+      "name": "Ensalada Griega 2",
+      "description": "Mediterránea con aceitunas y queso de cabra",
       "price": 4.99,
       "image": "/assets/images/salads/salad3.webp",
       "category": "salads",
@@ -483,7 +598,7 @@
     },
     {
       "id": "seafood-001",
-      "name": "Ostras Frescas",
+      "name": "Ostras",
       "description": "Ostras frescas con limón",
       "price": 4.99,
       "image": "/assets/images/seafood/ostras1.jpg",
@@ -498,8 +613,8 @@
     },
     {
       "id": "seafood-002",
-      "name": "Camarones al Ajillo",
-      "description": "Camarones salteados con ajo y aceite de oliva",
+      "name": "Camaron al Ajillo",
+      "description": "Salteados con ajo y aceite de oliva",
       "price": 4.99,
       "image": "/assets/images/seafood/shrimps1.jpg",
       "category": "seafood",
@@ -529,7 +644,7 @@
     {
       "id": "seafood-004",
       "name": "Calamares Fritos",
-      "description": "Calamares fritos con salsa tártara",
+      "description": "Calamares fritos en salsa tártara",
       "price": 4.99,
       "image": "/assets/images/seafood/soup4.jpg",
       "category": "seafood",

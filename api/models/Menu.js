@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const dishSchema = new mongoose.Schema({
-  id: { type: String, required: true, unique: true },
+  id: { type: String, required: true },
   name: { type: String, required: true },
   description: { type: String, required: true },
   price: { type: Number, required: true },
@@ -17,7 +17,7 @@ const dishSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const categorySchema = new mongoose.Schema({
-  id: { type: String, required: true, unique: true },
+  id: { type: String, required: true },
   name: { type: String, required: true },
   description: { type: String },
   icon: { type: String, default: "🍽️" },
