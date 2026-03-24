@@ -24,7 +24,7 @@
   width: calc(100% - 2rem);
 
   display: flex;
-  flex-direction: row;
+  flex-direction:column;
  
   height:5rem;
  
@@ -133,12 +133,20 @@
 
 /* Dishes Grid Contain the selected items */
 .dishesGrid {/*Container Cards-Items*/
-  margin-top:5rem;
+  margin-top:2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   padding: 15px 8px;
  /* background-color: red;*/
+}
+
+.menuContainer{
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  margin-top:1rem;
+  margin-bottom:1rem;
 }
 .menuTitle {
   display: flex;
