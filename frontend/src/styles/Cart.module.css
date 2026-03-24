@@ -12,6 +12,7 @@
   margin-top: 2rem;
   padding-top: 2rem;
   margin: 0 auto;
+  margin-top: 1rem;
   padding-top:2.5rem
 }
 
@@ -108,7 +109,7 @@
   background: #25D366;
   color: white;
   border: none;
-  border-radius: 30px;
+  border-radius: 50px;
   font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
@@ -125,7 +126,7 @@
   background: wheat;
   color: brown;
   border: none;
-  border-radius: 30px;
+  border-radius: 50px;
   font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
@@ -145,7 +146,7 @@
 
 hr {
   border: none;
-  border-top: 2px dashed #eee;
+  border-top: 2px dashed #807b7b;
   margin: 1.5rem 0;
 }
 
