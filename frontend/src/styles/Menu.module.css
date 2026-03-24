@@ -18,7 +18,7 @@
 
 .categoryTabs { /* CONTAINER **Category Tabs */
   position: fixed;
-  top:5rem;
+  top:1rem;
   left:50%;
   transform: translateX(-50%);
   width: calc(100% - 2rem);
@@ -26,7 +26,7 @@
   display: flex;
   flex-direction:column;
  
-  height:5rem;
+  height:6rem;
  
   
    gap: 0.75rem;
@@ -44,8 +44,9 @@
   
 }
 
-.containerTitle{
-  padding: 0 1rem 0.3rem 1rem;
+.containerTitle{/*container*/
+  margin-top:1rem;
+  margin-bottom:1rem;
 }
 .categoriesTitle {/*CATEGORIAS*/
   display:flex;
@@ -55,7 +56,7 @@
   padding-top:0.5rem;
   padding-bottom:0.5rem;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 600;
   color: chocolate;
   
 }
@@ -74,6 +75,8 @@
 .tabsRow {
   display: flex;
   gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: 0.5rem 0.75rem;
 
   overflow-x: auto;
