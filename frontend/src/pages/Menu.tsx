@@ -119,32 +119,28 @@ export default function Menu() {
 
   return (
     <div className={styles.container}>
-       
       {/* Category Tabs */}
       <div className={styles.categoryTabs}>
-        <div className={styles.containerTitle}>
-           <h1 className={styles.categoriesTitle}>CATEGORÍAS</h1>
-        </div>
-        <div className={styles.tabsRow}>
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            className={`${styles.categoryTab} ${
-              selectedCategory === category.id ? styles.activeTab : ""
-            }`}
-            onClick={() => handleCategoryClick(category.id)}
-          >
-            <span className={styles.categoryIcon}>{category.icon}</span>
-            <span className={styles.categoryName}>{category.name}</span>
-          </button>
-        ))}
-        </div>
+          <div className={styles.containerTitle}>
+              <h1 className={styles.categoriesTitle}>CATEGORÍAS</h1>
+          </div>
+            <div className={styles.tabsRow}>
+               {categories.map((category) => (
+                 <button
+                     key={category.id}
+                     className={`${styles.categoryTab} ${
+                          selectedCategory === category.id ? styles.activeTab : ""
+                      }`}
+                      onClick={() => handleCategoryClick(category.id)}
+                   >
+                     <span className={styles.categoryIcon}>{category.icon}</span>
+                     <span className={styles.categoryName}>{category.name}</span>
+                  </button>
+                ))}
+          </div>
       </div>
-
       {/* Dishes Grid */}
-      
       <div className={styles.dishesGrid}>
-       
         {dishes.map((dish) => (
           <div key={dish.id} className={styles.dishCard}>
             <div className={styles.dishImageContainer}>
