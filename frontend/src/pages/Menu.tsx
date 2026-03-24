@@ -121,6 +121,7 @@ export default function Menu() {
     <div className={styles.container}>
       {/* Category Tabs */}
       <div className={styles.categoryTabs}>
+        <h1>CATEGORÍAS</h1>
         {categories.map((category) => (
           <button
             key={category.id}
@@ -137,6 +138,9 @@ export default function Menu() {
 
       {/* Dishes Grid */}
       <div className={styles.dishesGrid}>
+        <h2>
+          MENÚ
+        </h2>
         {dishes.map((dish) => (
           <div key={dish.id} className={styles.dishCard}>
             <div className={styles.dishImageContainer}>
