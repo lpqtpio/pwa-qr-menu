@@ -42,7 +42,7 @@
   margin-top:0;
   margin-bottom:1rem;
 
-  background-color:linear-gradient( 135deg, black, rgb(45, 48, 49), black);
+  background:linear-gradient( 135deg, lemonchiffon, wheat, lemonchiffon, orange);
  
    background-size: 200% 200%;/*To apply animation*/
      animation: gradientMove 6s ease-in-out infinite;
