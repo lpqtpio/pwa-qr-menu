@@ -48,9 +48,9 @@
 
 .containerTitle{/*container OF: .categoriesTitle*/
   margin-top:0;
-  margin-bottom:0;
+  margin-bottom:1.5rem;
   height: 4rem;
-  /* background-color:green;*/
+   background-color:green;
    padding-top:1rem;
    padding-bottom:2.5rem;
 }
