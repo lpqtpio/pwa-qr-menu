@@ -52,13 +52,14 @@
   height: 4rem;
   /* background-color:green;*/
    padding-top:1rem;
-   padding-bottom:1rem;
+   padding-bottom:2.5rem;
 }
 .categoriesTitle {/* title "CATEGORIAS" */
   display:flex;
   flex-direction: row;
   justify-content: center;
   text-align: center;
+  padding-top:0;
   padding-bottom: 1.5rem;
   padding-left:1rem;
   padding-right:1rem;
@@ -167,7 +168,7 @@
 
 /* Dishes Grid Contain the selected items */
 .dishesGrid {/*Container Cards-Items*/
-  margin-top:14rem;
+  margin-top:13rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -185,7 +186,7 @@
   display: flex;
   flex-direction: column;
    border: none;
-   margin-top:1rem;
+   margin-top:0.5rem;
    margin-bottom:0.2rem;
  
  /* border:1px solid rgb(172, 165, 165);*/
